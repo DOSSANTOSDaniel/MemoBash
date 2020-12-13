@@ -1,1 +1,1 @@
-# MemoBash
+# Notes sur la création de scripts shell Bash
