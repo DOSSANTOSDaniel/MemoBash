@@ -5,8 +5,7 @@ Un script écrit en Bash est composé de plusieurs sections.
 | Nb | Section |
 |:--|:--|
 | 0 | #!/bin/bash |
-| 1 | Bannière de description, décrire la fonction du programme et un journal des modifications, Une déclaration de licence
- |
+| 1 | Bannière de description, décrire la fonction du programme et un journal des modifications, Une déclaration de licence |
 | 2 | Variables |
 | 3 | Fonctions (Avec une fonction d'aide et une fonction pour tester si l'utilisateur du programme est root)|
 | 4 | Vérification de l’utilisateur |
