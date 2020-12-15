@@ -1,3 +1,5 @@
+# La condition CASE
+
 ```Bash
 #!/bin/bash
 

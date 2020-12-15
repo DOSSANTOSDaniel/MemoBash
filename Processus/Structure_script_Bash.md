@@ -6,13 +6,13 @@ Un script écrit en Bash est composé de plusieurs sections.
 |:--|:--|
 | 0 | #!/bin/bash |
 | 1 | Bannière de description, décrire la fonction du programme et un journal des modifications, Une déclaration de licence |
-| 2 | Variables |
+| 2 | Inclusions |
 | 3 | Fonctions (Avec une fonction d'aide et une fonction pour tester si l'utilisateur du programme est root)|
-| 4 | Vérification de l’utilisateur |
-| 5 |  Une méthode pour évaluer les options de ligne de commande (GetOpt) |
-| 6 | Code principal (Main) |
+| 4 | Variables |
+| 5 | Vérification de l’utilisateur |
+| 6 | Une méthode pour évaluer les options de ligne de commande (GetOpt) |
+| 7 | Code principal (Main) |
 
-Ne pas oublier de commenter chaque fonction.
 
 ## A avoir sur chaque script
 
@@ -22,6 +22,7 @@ Ne pas oublier de commenter chaque fonction.
 | Test l'utilisateur | Permet de détecter l'utilisateur qui à démarrer le script |
 | Fonction Usage | C'est la fonction d'aide du script |
 | Options passées | Permet de passer des option ou des paramétrés au script (getopt) |
+| Dépendances | Permet de voir si les programmes dans le script, on besoin de dépendances. |
 | Logs | C'est facultatif mais peut être très utile|
 | Effacer les traces | Effacer les traces à la fin du script |
 

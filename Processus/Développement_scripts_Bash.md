@@ -1,4 +1,4 @@
-# Développement d’un scripts Bash
+# Plan du développement d’un scripts Bash
 ## Avant le développement
 ### Modèle et procédure
 ## Modèle de Kanban pour la création d’un script shell
@@ -29,7 +29,6 @@
 * Environnement d’exécution
 * L’objectif final 
 * Identifier les fonctionnalités
-* Définition des fonctionnalitées par version
 * Interactions utilisateur
 * Descriptif du script
   * Type de système d’exploitation:
@@ -38,7 +37,7 @@
   * Choix du shell:
   * Exécution du script avec le compte:
 
-* Diviser le projet en différents dossiers, chaque dossier sauf main va contenir des bouts de code divisés par fonctions ou actions.
+* Diviser le projet en différents dossiers, chaque dossier sauf main va contenir des bouts de code divisés par fonctions.
 
 | Dossiers | Description |
 |:--|:--|
@@ -71,8 +70,6 @@ script l’option set –u, qui déclenche une erreur si on fait référence
 Ou
 
 bash -x toto.sh
-
-Voir cahier de scripting Bash!
 
 ## Après le développement du script
 
