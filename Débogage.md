@@ -39,3 +39,27 @@ Utilisation :
 ```bash
 shellcheck script.sh
 ```
+
+## Utiliser le mode strict de Bash
+
+Exemple :
+
+```bash
+#!/bin/bash
+
+set -euo pipefail
+IFS=$'\h\T'
+```
+
+"set -e" cause l’interruption immédiate de l’interpréteur de commande s'il a rencontré une erreur durant l'exécution du script, (si le statut de retour est différent de 0), mais parfois on va avoir besoin d'avoir une valeur autre que 0 comme retour, on peut alors isoler seulement les partie du script qui nous intéressent avec :
+
+```bash
+set +e
+.
+.
+.
+set -e
+```
+Utiliser ce mécanisme le plus possible, à ne pas utiliser si c'est un script interactif !
+
+

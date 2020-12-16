@@ -32,7 +32,8 @@ touch /home/toto/tortue.txt
 Ici le script efface le fichier tortue.txt et s'il réussi alors il va recréer un nouveau fichier tortue.txt, par contre s'il échoue à supprimer le fichier alors on quitte de script.
 
 On peut indiquer un argument à la commande "exit", exemple : "exit 1", "exit 26".
-L'argument est une valeur positive ou négative, elle permet de spécifier un type personnel d'erreur :
+
+L'argument est une valeur positive ou négative, elle permet de spécifier un type personnel d'erreur, ne pas utiliser "exit 0" car s'est le code retour par défaut quand le script se termine. 
 
 Exemple :
 

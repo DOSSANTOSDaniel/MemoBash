@@ -15,6 +15,9 @@ Avant d'exécuter un script il faut lui donner le droit de s'exécuter :
 sudo chmod +x script.sh
 ```
 
+Droits a donner à un script : 755.
+
+
 On peut exécuter un script de trois manières différentes :
 ```Bash
 1 : /home/toto/script.sh
@@ -22,4 +25,7 @@ On peut exécuter un script de trois manières différentes :
 3 : bash script.sh
 ```
 
-La programmation shell est de nature procédurale. 
+La programmation shell est de nature procédurale.
+
+## Informations sur les commandes
+
