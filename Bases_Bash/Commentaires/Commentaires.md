@@ -17,3 +17,20 @@ Commentaire après la ligne :
 #!/bin/bash
 echo "Bonjour"  # Affiche Bonjour
 ```
+
+# Commentaires sur plusieurs lignes
+
+```bash
+#!/bin/bash
+
+# commentaire sur plusieurs lignes
+
+: << COM
+'ligne 1
+ligne 2
+ligne 3'
+COM
+
+```
+
+Le nom COM permet d'indiquer où commence le commentaire et où il se termine, au lieu de COM, on peut choisir n'importe quel autre nom.

@@ -134,3 +134,23 @@ bash -x toto.sh
 * Maintenance
 
 ...
+
+## Si c'est un petit projet
+
+1. Mettre des commentaires là ou on souhaite coder, les commentaires vont décrire ce qu'il y a à coder cela va nous aider à bien connaître notre besoin avant de coder.
+
+## Utilisation de l'historique pour créer des scripts
+
+- Commencer par effacer l’historique des commandes :
+
+```bash
+history -c
+```
+- Maintenant vous pouvez réaliser le TP exemple installation d'un serveur.
+- A la fin vous pouvez enregistrer dans un fichier l'historique des commandes saisies :
+
+```bash
+history -w script.sh
+```
+- Mise en forme et complétion du fichier script.sh.
+

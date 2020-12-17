@@ -40,3 +40,23 @@ Exemple avec "bc" :
 
 8
 ``` 
+
+## Calcul avec "expr"
+
+La commande réalise aussi des opérations mathématiques :
+
+```bash
+[daniel🐧iS3810](~)$ expr 4 + 4
+
+8
+
+```
+
+Attention il faut échapper certains caractère si on veux par exemple faire une multiplication :
+
+```bash
+[daniel🐧iS3810](~)$ expr 4 \* 4
+
+16
+
+```

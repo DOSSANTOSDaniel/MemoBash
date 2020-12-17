@@ -1,6 +1,6 @@
 # Recommandations et bonnes pratiques
 
-Voici quelques recommandations et bonnes pratiques d'après le "Shell style guide" de Google.
+## Voici quelques recommandations et bonnes pratiques d'après le "Shell style guide" de Google.
 
 1. Privilégier l'utilisation de l’interpréteur Bash au lieu de sh ou autre.
 2. L'indentation dans un script (2 espaces), pas de tabulation.
@@ -14,4 +14,14 @@ Voici quelques recommandations et bonnes pratiques d'après le "Shell style guid
 10. Privilégier "${@}" à ${*}.
 11. L'utilisation de la commande "eval" n'est pas recommandée.
 12. Toujours vérifier la valeur de statut à chaque opération.
- 
+
+## Autres recommandations
+
+1. Il n'est pas conseillé d'écrire le chemin absolu d'une commande dans un script, car cela impactera ça portabilité sur un autre système.
+2. Utiliser au maximum les variables locales dans une fonction.
+3. Mettre en place des messages de log pour les scripts.
+4. Mettre la variable qui accueille la valeur de saisie de "read" en lecture seule.
+5. Veiller à ce que le fonctionnement du script soit toujours idempotent.
+6. Au lieu de remplir le script de commentaires non nécessaires mieux vaux bien nommer ces fonctions et variables de manière à comprendre sans avoir besoin de commentaires supplémentaires.
+7. Faire le moins possible de scripts interactifs, par exemple au lieu d'utiliser la commande read il est recommandé plutôt d'utiliser les arguments en d'entrée d'un script ou d'utiliser l'entrée standard pour définir le contenue des variables, cela permet au script d'être utilisé par d'autres scripts ou par le système sans qu'il y ait besoin d'un humain, donc il est conseillé de bien réfléchir à la pertinence d'une saisie dans un script.
+8.  
