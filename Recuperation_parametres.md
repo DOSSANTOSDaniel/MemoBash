@@ -91,7 +91,7 @@ done
 
 Explication :
 
-```bash
+```
 while getopts "s:d:hv" argument
                ------  --------
                   ^       ^
@@ -111,7 +111,7 @@ Options acceptées :
 
 Autre exemple :
 
-```bash
+```
 while getopts ":s:d:hv" argument
                ^
                |_______________ Indique le mode silencieux, n'affiche pas les erreurs.
