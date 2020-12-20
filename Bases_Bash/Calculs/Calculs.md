@@ -60,3 +60,13 @@ Attention il faut échapper certains caractère si on veux par exemple faire une
 16
 
 ```
+
+## Nouvelle syntaxe pour les calculs
+
+```bash
+declare -i var
+var=15+15
+echo "${var}"
+
+30
+```

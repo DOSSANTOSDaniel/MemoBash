@@ -1,4 +1,6 @@
-# La boucle while 
+# La boucle while
+
+"While" permet de faire une itération sur une action un nombre de fois inconnu.
 
 Boucle tant qu'une certaine valeur est vrai.
 

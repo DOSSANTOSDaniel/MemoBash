@@ -52,6 +52,10 @@ echo "Le nom est : ${nom}"
 chaine_maj
 ```
 
+## Variable interne à une fonction
+
+La variable "$FUNCNAME" contient le nom de la fonction en cours d’exécution.
+
 ## bonne pratique
 
 Il est recommandé d'utiliser des variables locales pour contenir les arguments d'entrée d'une fonction ici la variable locale "nom" contient "${1}":

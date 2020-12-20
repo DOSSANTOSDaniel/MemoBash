@@ -94,6 +94,7 @@ On peut aussi utiliser "export $1".
 | Option | Description |
 |:---|:---|
 | -a | tableau |
+| -A | tableau associé |
 | -i | entier |
 | -r | readonly |
 | -x | export |
@@ -223,8 +224,9 @@ Expansion conditionnelle :
 
 | Expansion | Description |
 |:---|:---|
-| "${var:-texte}" | si la variable "var" n'est pas définie, cela renvoi la valeur "texte" sans définir la variable var. |
-| "${var:=texte}" | si la variable "var" n'est pas définie, cela renvoi la valeur "texte" et définie la variable var avec la valeur "texte". |
+| "${var:-texte}" | si la variable "var" n'est pas définie, cela renvoi la valeur "texte" sans définir la variable var et si elle est définie alors cela envois ça valeur. |
+| "${var:=texte}" | si la variable "var" n'est pas définie, cela renvoi la valeur "texte" et définie la variable var avec la valeur "texte", si elle est définie et non vide alors elle renvoi sont contenue. |
+| "${var=texte}" | si var est définie sont contenue sera utilisé même s'il est vide, dans le cas contraire cele renvoi 'texte'. |
 | "${var:?texte}" | si la variable "var" n'est pas définie, cela renvoi l'erreur "texte". |
 | "${var:+texte}" | si la variable "var" est définie, cela retourne la valeur "texte" si non cela retourne une valeur vide.  |
 
@@ -335,5 +337,23 @@ echo "${var/un/deux}"
 [daniel🐧iS3810](~)$ ./toto.sh 
 
 deux bonjour
+
+```
+
+## Traitement des variables avec la commande set
+
+Le mécanisme du shell interprète une variable non définie comme une variable vide ou nulle.
+
+Définir des variables sans leurs associer de valeurs :
+
+```bash
+set var
+
+```
+
+Pour supprimer la définition de cette variable :
+
+```bash
+unset var
 
 ```

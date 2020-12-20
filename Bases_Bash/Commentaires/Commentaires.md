@@ -20,6 +20,10 @@ echo "Bonjour"  # Affiche Bonjour
 
 # Commentaires sur plusieurs lignes
 
+Le shell Bash ne permet pas d'avoir des commentaires sur plusieurs lignes !
+
+Ceci est du bricolage, a ne pas faire :
+
 ```bash
 #!/bin/bash
 
