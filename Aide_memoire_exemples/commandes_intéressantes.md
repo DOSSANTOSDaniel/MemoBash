@@ -147,3 +147,16 @@ dd if=/tmp/smart of=/dev/null bs=1M count=1024
 
 rm -rf /tmp/smart
 ```
+## Afficher le résultat d'une commande et en envoyer ce résultat dans un fichier
+
+```bash
+#!/bin/bash
+commande | tee output.txt
+#pareil que:
+commande > toto.txt
+
+commande | tee -a output.txt
+#pareil que:
+commande >> toto.txt
+
+```
