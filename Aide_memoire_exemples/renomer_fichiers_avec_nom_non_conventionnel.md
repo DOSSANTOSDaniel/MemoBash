@@ -10,7 +10,7 @@ do
   file_name="${i}"
 
   # Substituer 
-  sub_name="$(echo $i | sed 's/[^[:alnum:]]/-/g' | tr '[:upper:]' '[:lower:]')"
+  sub_name="$(echo ${i} | sed 's/[^[:alnum:]]/-/g' | tr '[:upper:]' '[:lower:]')"
 
   # renomer les fichiers
   if [[ "${file_name}" != "${sub_name}" ]]
