@@ -133,7 +133,7 @@ nbtscan -v -s : 192.168.1.0/24
 cat /sys/class/net/eth0/address
 ```
 
-## teste de la vitesse d'écriture et lecture disque
+## test de vitesse d'écriture et lecture disque
 
 ```bash
 #!/bin/bash
