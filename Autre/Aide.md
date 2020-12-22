@@ -1,7 +1,7 @@
 # Aide
 
 ## En utilisant le terminal
-On peut utiliser la commande man info ou whatis pour avoir plus d'informations sur une commande en particulier.
+On peut utiliser la commande man, info ou whatis pour avoir plus d'informations sur une commande en particulier.
 
 ```Bash
 man ls

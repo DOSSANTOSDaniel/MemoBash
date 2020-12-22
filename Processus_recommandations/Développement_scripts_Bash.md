@@ -1,8 +1,4 @@
 # Plan du développement d’un scripts Bash
-## Avant le développement
-### Modèle et procédure
-## Modèle de Kanban pour la création d’un script shell
-...
 
 ## Pour trouver l’idée si pas d’idées
 * Trouver une problématique sur un sujet :
@@ -17,7 +13,6 @@
 
 ## Réaliser à la main les actions
 * Se former à la technologie en question.
-* Suivre des tutoriels.
 * Créer une procédure ou article détaillé.
 
 ## Cahier des charges fonctionnel

@@ -153,3 +153,9 @@ Exemple :
 
 1
 ```
+
+## Bonne pratique
+
+[ $a -eq 10 ] ---> ancienne syntaxe
+
+(( a == 10 )) ---> nouvelle syntaxe

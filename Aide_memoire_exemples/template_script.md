@@ -1,5 +1,5 @@
 
-```
+# Entête de script
 
 ```bash
 #!/bin/bash

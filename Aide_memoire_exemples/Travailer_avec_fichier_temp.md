@@ -37,4 +37,6 @@ Ici à partir du moment qu'il y a un signale exit, alors la fonction finish est 
 
 On va pouvoir utiliser cette technique pour faire du nettoyage à la fin de l'exécution de nos scripts.
 
+Il est pas conseiller d'utiliser des fichiers temporaires car il vont consommer beaucoup de ressources a cause des accès disque.
+
 

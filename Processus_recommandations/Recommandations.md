@@ -27,4 +27,4 @@
 8. privilégier les commandes shell et les traitement de flux par rapport au boucles si possible.
 9. toujours veiller à tester les variables avant de les utilisées.
 10. il n'est pas recommandé de travailler avec des fichiers temporaires car cela consomme trop de ressources du fait des accès disque il vaut mieux privilégier l'utilisation des flux des commandes shell.
-11.  
+11. Toujours travailler sur une copie jamais sur l'original. 

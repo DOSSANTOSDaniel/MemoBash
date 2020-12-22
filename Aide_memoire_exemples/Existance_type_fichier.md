@@ -4,25 +4,25 @@
 # TITRE: Le fichier existe ?
 #================================================================#
 # DESCRIPTION:
-# Ce script va nous permettre de savoir si un fichier saissie 
+# Ce script va nous permettre de savoir si un fichier saisi 
 # par un utilisateur existe ou n'existe pas, il sera possible 
-# aussi de savoir quel est son type parmis les types de fichiers 
-# fichier, dossier, bloc, charactère et lien.
+# aussi de savoir quel est son type parmi les types de fichiers 
+# fichier, dossier, bloc, caractère et lien.
 #----------------------------------------------------------------#
 # AUTEURS:
-#  Daniel DOS SANTOS < danielitto91@gmail.com >
+#  Daniel DOS SANTOS 
 #----------------------------------------------------------------#
 # DATE DE CRÉATION: 07/07/2018
 #----------------------------------------------------------------#
 # USAGE: ./exo4_fichier.sh
 #----------------------------------------------------------------#
 # NOTES:
-# Les differents testes intégré au script:
-# Teste si un champ saissie par l'utilisateur est vide.
-# Teste si l'utilisateur a saissie un champ valide.
+# Les différents testes intégré au script:
+# Teste si un champ saisi par l'utilisateur est vide.
+# Teste si l'utilisateur a saisi un champ valide.
 # Teste si le fichier existe.
 # Teste le type du fichier.
-# Permet plusieurs combinaisons de saissies par l'utilisateur 
+# Permet plusieurs combinaisons de saisies par l'utilisateur 
 # exemple oui, o, O, OUI.
 #----------------------------------------------------------------#
 # BASH VERSION: GNU bash 4.4.12
@@ -68,7 +68,7 @@ function test
 {
 if [ -z $1 ]
 	then
-		error "Le champ est vide" "veuillez insserer un chemin valide"
+		error "Le champ est vide" "veuillez insérer un chemin valide"
 		stop
 else
 	if [ -e $1 ]
@@ -108,7 +108,7 @@ else
 			error "Le fichier existe et est d'un autre type !"
 		fi
 	else
-		error "Le fichier n'existe pas !" "Ou c'est une erreur de syntax !"
+		error "Le fichier n'existe pas !" "Ou c'est une erreur de syntaxe !"
 		stop
 	fi
 fi
@@ -127,10 +127,10 @@ function stop
 	*)
 		if [ -z $fin ]
 		then
-			error "Le champ est vide" "Veuillez insserer un choix valide"
+			error "Le champ est vide" "Veuillez insérer un choix valide"
 			stop
 		else
-			error "Probleme de syntax" "Veuillez insserer un choix valide"
+			error "Problème de syntaxe" "Veuillez insérer un choix valide"
 			stop
 		fi;;
 	esac
