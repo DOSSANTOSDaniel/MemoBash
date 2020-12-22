@@ -28,3 +28,4 @@
 9. toujours veiller à tester les variables avant de les utilisées.
 10. il n'est pas recommandé de travailler avec des fichiers temporaires car cela consomme trop de ressources du fait des accès disque il vaut mieux privilégier l'utilisation des flux des commandes shell.
 11. Toujours travailler sur une copie jamais sur l'original. 
+12. il n'est pas conseillé d'utiliser la commande apt dans un script, car il se peut que le retour de la commande évolue dans le temps, alors qu'avec la commande apt-get on grade le même retour sur plusieurs systèmes, on a ainsi une compatibilité plus forte entre les systèmes, préférez donc la commande apt-get et apt-cache. 
