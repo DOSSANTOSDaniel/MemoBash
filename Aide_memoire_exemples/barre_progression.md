@@ -33,7 +33,7 @@ declare -i nbcount=0
 declare -A my_array
 declare -ir total="$(du -s ${p_1} | cut -f1)"
 
-cp "${p_1}" "${p_2}" &
+cp "${p_1}" "${p_2}" ; sync &
 declare -i nb_dest="$(du -s ${p_2} | cut -f1)"
 
 until [ ${nb_dest} > 0 ]
@@ -56,4 +56,10 @@ do
   my_array[$nbcount]='='
   echo " [ ${my_array[@]} > ]"
 done
+```
+### Autre solution
+
+```bash
+sudo apt install progress
+cp toto.iso /tmp | progress -m
 ```
