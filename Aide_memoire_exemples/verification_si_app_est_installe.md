@@ -1,10 +1,11 @@
 # Vérification si une application est installée ou pas
 
 ```bash
-
 #!/bin/bash
 
-if [[ "$(command -v ${1})" || "$(flatpak list --app | grep ${1})" ]]
+readonly app=$(echo "${1}" | tr "[:upper:]" "[:lower:]")
+
+if [[ "$(command -v ${app})" || "$(flatpak list --app | grep ${app})" ]]
 then
   echo "Installé !"
 else
