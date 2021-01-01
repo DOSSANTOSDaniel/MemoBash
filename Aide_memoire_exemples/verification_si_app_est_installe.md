@@ -8,6 +8,12 @@ Détécte les differents types d'installations :
 ```bash
 #!/bin/bash
 
+if [[ -z "${1}" ]]
+then
+  echo "Nom de l'application manquant !"
+  exit 1
+fi
+
 readonly app=$(echo "${1}" | tr "[:upper:]" "[:lower:]")
 
 if [[ "$(command -v ${app})" || "$(flatpak list --app | grep ${app})" ]]
