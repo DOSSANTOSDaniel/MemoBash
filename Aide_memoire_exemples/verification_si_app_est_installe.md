@@ -1,7 +1,7 @@
 # Vérification si une application est installée ou pas
 Détécte les differents types d'installations :
 1. Manuelle
-2. Via gestionnaire de paquets (apt, dnf, pkg ...)
+2. Via gestionnaire de paquets (apt)
 3. Via snap
 
 ```bash
