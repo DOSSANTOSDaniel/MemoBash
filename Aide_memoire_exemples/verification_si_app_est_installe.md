@@ -10,17 +10,27 @@ Détécte les differents types d'installations :
 
 if [[ -z "${1}" ]]
 then
-  echo "Nom de l'application manquant !"
+  echo "Nom de l'application manquant !" # à enlever 
   exit 1
 fi
 
-readonly app=$(echo "${1}" | tr "[:upper:]" "[:lower:]")
+app=$(echo "${1}" | tr "[:upper:]" "[:lower:]")
 
-if [[ "$(command -v ${app})" || "$(flatpak list --app | grep ${app})" ]]
+stat_app=$(dpkg -s "${app}" | grep Status | awk '{print $2}')
+
+if [[ ${stat_app} != 'install' && ! $(command -v ${app}) ]]
 then
-  echo "Installé !"
-else
-  echo "Non installé !"
+  echo -e "\n Installation de ${app} en cours \n"
+  apt-get update -q
+  apt-get install -qy ${app}
+  
+  if [[ "${?}" == "0" ]]
+  then
+    echo -e "\n Installation de ${app} réussie \n"
+  else
+    echo -e "\n Erreur : \n"
+    echo -e "\n Installation de ${app} Impossible!\n"
+    exit 1
+  fi
 fi
-
 ```
