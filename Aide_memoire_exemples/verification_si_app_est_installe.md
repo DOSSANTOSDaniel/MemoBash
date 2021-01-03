@@ -33,3 +33,23 @@ then
   fi
 fi
 ```
+## Vérification application Flatpak
+
+```bash
+#!/bin/bash
+
+readonly var=$(echo "${1}" | tr "[:upper:]" "[:lower:]")
+readonly app=$(flatpak list --app | grep ${var} | cut -f1 | tr "[:upper:]" "[:lower:]")
+
+if [[ -z ${var} ]]
+then
+  echo "Nom manquant !"
+  exit 1
+elif [[ ${app} == ${var} ]]
+then
+  echo "L'application ${var} est installée"
+else
+  echo "L'application ${var} n'est pas installée"
+fi
+
+```
