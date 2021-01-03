@@ -10,7 +10,7 @@ Détécte les differents types d'installations :
 
 if [[ -z "${1}" ]]
 then
-  echo "Nom de l'application manquant !" # à enlever 
+  echo "Nom de l'application manquant !"
   exit 1
 fi
 
