@@ -1,5 +1,5 @@
 
-# Entête de script
+# Template de script Bash
 
 ```bash
 #!/bin/bash
@@ -18,6 +18,7 @@
 #************************************************#
 
 ### Inclusions ###
+./script.sh
 
 ### Fonctions ###
 usage() {
@@ -98,9 +99,10 @@ then
 fi
 }
 
+### Main ###
+
 ### Variables ###
 
-### Main ###
 # Bannière
 cat << "EOF"
                _       _
@@ -115,9 +117,10 @@ EOF
 test_user
 
 # Test de la distribution
-
+test_distro
 
 # Dépendances
+check_installed <application>
 
 # GetOps
 while getopts "hv" arguments
