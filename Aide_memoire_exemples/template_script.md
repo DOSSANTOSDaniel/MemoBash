@@ -20,7 +20,6 @@
 ### Inclusions ###
 
 ### Fonctions ###
-
 usage() {
   echo "___ Script toto"
   echo ""
@@ -102,7 +101,6 @@ fi
 ### Variables ###
 
 ### Main ###
-
 # Bannière
 cat << "EOF"
                _       _
@@ -113,7 +111,11 @@ cat << "EOF"
                 |_|
 EOF
 
+# Test de l'utilisateur
 test_user
+
+# Test de la distribution
+
 
 # Dépendances
 
