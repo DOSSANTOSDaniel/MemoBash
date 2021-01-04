@@ -42,6 +42,11 @@ alert_info() {
   echo "\n ${1} : ${2} \n"
 }
 
+clean_exit() {
+apt-get remove --purge -yq <application>
+rm -rf /etc/toto/fic.txt
+}
+
 test_user() {
 if [[ ${LOGNAME} != "root" ]]
  then
@@ -169,5 +174,6 @@ do
 done
 
 # Effacer les traces
+trap clean_exit err exit
 
 ```
