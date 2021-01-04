@@ -17,6 +17,9 @@
 # Licence:
 #************************************************#
 
+# Ne permet pas de variables inutilisées.
+set -u
+
 ### Inclusions ###
 ./fonctions.sh
 
