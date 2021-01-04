@@ -105,6 +105,7 @@ fi
 }
 
 ### Main ###
+# set +e <----> set -e : quitte à la moindre erreur.
 
 # Variables 
 
