@@ -18,7 +18,7 @@
 #************************************************#
 
 ### Inclusions ###
-./script.sh
+./fonctions.sh
 
 ### Fonctions ###
 usage() {
