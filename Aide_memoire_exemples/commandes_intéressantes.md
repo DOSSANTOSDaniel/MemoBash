@@ -164,3 +164,11 @@ commande | tee -a output.txt
 commande >> toto.txt
 
 ```
+
+## Permet de savoir si on est dans une vm ou une machine physique
+
+```bash
+sudo virt-what
+ou
+facter virtual
+```
