@@ -101,7 +101,7 @@ fi
 
 ### Main ###
 
-### Variables ###
+# Variables 
 
 # Bannière
 cat << "EOF"
