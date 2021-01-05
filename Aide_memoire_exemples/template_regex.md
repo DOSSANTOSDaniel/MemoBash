@@ -56,7 +56,7 @@ fi
 ```
 ## Email
 
-Format : <user>@<host>.<dom>
+Format : user@host.xxx
 
 ```bash
 # Regex
