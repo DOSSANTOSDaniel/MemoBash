@@ -69,14 +69,15 @@ EOF
 }
 
 alert_info() {
+  local msg1="${1}"
+  local msg2="${2}"
   # $1 : ERREUR, INFO, ALERTE.
   # $2 : Informations complémentaires.
-  echo "\n ${1} : ${2} \n"
+  echo -e "\n !!! ${msg1} : ${msg2} !!! \n"
 }
 
 clean_exit() {
-apt-get remove --purge -yq <application>
-rm -rf /etc/toto/fic.txt
+apt-get remove --purge -yq {1}
 }
 
 test_user() {
