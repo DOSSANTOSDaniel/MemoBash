@@ -102,23 +102,31 @@ test_pkg
 check_install 'firefox'
 
 ```
-## Vérification application Flatpak
+## Vérification application Flatpak, snap et install
 
 ```bash
 #!/bin/bash
 
 readonly var=$(echo "${1}" | tr "[:upper:]" "[:lower:]")
-readonly app=$(flatpak list --app | grep ${var} | cut -f1 | tr "[:upper:]" "[:lower:]")
 
-if [[ -z ${var} ]]
+readonly app_flat=$(flatpak list --app | grep ${var} | cut -f2)
+readonly app_snap=$(snap list --app | grep ${var} | awk '{print $1}')
+
+if [[ $(dpkg -s flatpak 2> /dev/null) && $(command -v flatpak 2> /dev/null) ]]
 then
-  echo "Nom manquant !"
-  exit 1
-elif [[ ${app} == ${var} ]]
+  if ! [[ $(flatpak info ${app_flat} 2> /dev/null) ]]
+  then
+    flatpak update && flatpak install -y ${app_flat}
+  fi
+elif [[ $(dpkg -s snapd 2> /dev/null) && $(command -v snap 2> /dev/null) ]]
 then
-  echo "L'application ${var} est installée"
+  if ! [[ $(snap info ${app_flat} 2> /dev/null) ]]
+  then
+    snap install ${app_snap}
+  fi
 else
-  echo "L'application ${var} n'est pas installée"
+  echo ""
 fi
+
 
 ```
