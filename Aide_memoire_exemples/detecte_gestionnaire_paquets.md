@@ -19,10 +19,10 @@ Fonctionne sur les OS qui utilisent :
         then
           pkg_os='yum'
         else
-          alert_info 'INFO' 'Gestionnaire de paquets non prit en charge'
+          echo 'INFO : Gestionnaire de paquets non prit en charge'
           exit 1
         fi
       fi ;;
-    *) alert_info 'INFO' "OS non prit en charge : $OSTYPE" ;;
+    *) echo "INFO : OS non prit en charge : $OSTYPE" ;;
   esac
 ```
