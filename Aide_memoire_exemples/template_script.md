@@ -3,7 +3,6 @@
 
 ```bash
 #!/bin/bash
-
 #************************************************#
 # Nom:     <nom>.sh                              #
 # Auteur:  toto <toto@mail.com>                  #
@@ -25,18 +24,48 @@ set -u
 
 ### Fonctions ###
 usage() {
-  echo "___ Script toto"
-  echo ""
-  echo "Parametre passé : ${1}"
-  echo ""
-  echo "$(basename ${0}) <opt> <arg>"
-  echo ""
-  echo " Ce script permet de ..." 
-  echo ""
+  cat << EOF
+  
+  ___ Script : $(basename ${0}) ___
+  
+  Parametres passés : ${@}
+  
+  $(basename ${0}) -[h|v]
+  
+  Le script doit être lancé en tant que root.
+  C'est un script interactif.
+  
+  Donnée à saisir pendant l’exécution du script :
+  *. 
+  *.
+  
+  Rôle:                                          
+  Ce script va permettre de faciliter            
+  l'utilisation de...
+
+  Détail des fonctionnalités :
+  1. Installation automatique de ...
+  2. 
+  3. 
+
+  Usage: ./$(basename ${0}) -[h|v]
+  -h : Aide.
+  -v : Affiche la version.
+  
+EOF
 }
 
 version() {
-  echo "Script version : 0.99"
+  local ver='0.1'
+  local dat='06/01/21'
+  cat << EOF
+  
+  ___ Script : $(basename ${0}) ___
+  
+  Version : ${ver}
+  Date : ${dat}
+  
+EOF
 }
 
 alert_info() {
