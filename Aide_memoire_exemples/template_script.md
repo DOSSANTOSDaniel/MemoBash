@@ -110,7 +110,7 @@ case "$OSTYPE" in
   darwin*) echo "OSX"
 	  sw_vers || uname -rs 
 	  ;;
-  *) echo "OS inconnu : $OSTYPE" 
+  *) echo "OS non prit en charge : $OSTYPE" 
 	  ;;
 esac
 }
