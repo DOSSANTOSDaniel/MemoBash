@@ -172,7 +172,8 @@ sudo virt-what
 ou
 facter virtual
 ```
-## Récupération de certaines informations du système avec cat
+
+## Récupération de certaines informations du système avec cat
 ```bash
 #Nombres de connections tcp :
 cat  /proc/net/tcp | wc -l
