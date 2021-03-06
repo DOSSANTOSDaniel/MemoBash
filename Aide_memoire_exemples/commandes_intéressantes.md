@@ -172,3 +172,32 @@ sudo virt-what
 ou
 facter virtual
 ```
+## Récupération de certaines informations du système avec cat
+```bash
+#Nombres de connections tcp :
+cat  /proc/net/tcp | wc -l
+
+#Nombres de connections udp :
+cat  /proc/net/udp | wc -l
+
+#Table arp :
+cat  /proc/net/arp
+
+#Informations sur les interfaces réseau :
+cat  /proc/net/route
+
+#wifi :
+sudo cat  /proc/net/wireless
+
+#Login :
+sudo cat /proc/self/loginuid
+
+#OS type :
+sudo cat /proc/sys/kernel/ostype
+
+#Version du kernel :
+sudo cat /proc/sys/kernel/osrelease
+
+#Version realease:
+sudo cat /proc/sys/kernel/version
+```
