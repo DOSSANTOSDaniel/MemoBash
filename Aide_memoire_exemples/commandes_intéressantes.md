@@ -42,31 +42,31 @@ curl fr.wttr.in/Massy_transparency=50.png --output Massy.png
 # Transparence de 0 à 255
 ```
 
-## Affiche les dossiers les plus lourd dans un point de l'arborescence
+## Affiche les dossiers ou fichiers avec leur taille representée graphiquement.
 
 ```bash
 ncdu
 ```
 
-## Affiche IP
+## Affiche les adresses IP sur la machine
 
 ```bash
 hostnamectl -I
 ```
 
-## Supprime disque
+## Supprime un disque entier de manière sécurisé
 
 ```bash
 nwipe
 ```
 
-## Affiche infos HW
+## Affiche des informations sur le matériel
 
 ```bash
 inxi -Fx
 ```
 
-## Affiche le % des disques
+## Affiche le taux de remplissage des disques
 
 ```bash
 pydf
@@ -84,20 +84,23 @@ linuxlogo -L list
 mosh
 ```
 
-## Vocal
+## Phrases en vocal sur le terminal
 
 ```bash
-espeak -v fr "titi toto"
+espeak -s 145 -v fr "+Je vous souhaite une bonne journée !"
+
+# -s: vitesse de lecture
+# -v: langue
 ```
 
-## Installation des bureaux
+## Installation des gestionnares de bureaux
 
 ```bash
 Tasksel
 ```
 https://wiki.debian-fr.xyz/Tasksel
 
-## Test port
+## Test d'ouverture d'un port
 
 ```bash
 telnet localhost 22
