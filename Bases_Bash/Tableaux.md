@@ -19,13 +19,23 @@ tab=(1 5 9)
 
 ```
 
-Déclaration d'un tableau assiciatif :
+Déclaration d'un tableau associatif :
 ```bash
 declare -A tab
 
 tab[fruit]=orange
-tab[fleur]=Rose
-tab[animale]=Tigre
+tab[fleur]=rose
+tab[animal]=chien
+```
+ou
+```bash
+declare -A tab
+
+tab=(
+  ["fruit"]="orange"
+  ["fleur"]="rose"
+  ["animal"]="chien"
+)
 ```
 
 Affiche le champ à la l'index 2 :
