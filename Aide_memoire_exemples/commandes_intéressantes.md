@@ -7,16 +7,39 @@ yes | apt-get install htop
 ```
 
 ## Diagnostique réseau
-
+### mtr permet d'afficher en continu les résultats d'envois de paquets avec des statistiques détaillées.
 ```bash
 mtr 8.8.8.8
 
 ```
 
-## Afficher la météo
+## Afficher la météo sur le terminal
 
 ```bash
+# Simple utilisation
 curl wttr.in
+
+# Affichage aide
+curl wttr.in/:help
+
+# Météo en français dans la ville de Massy
+curl fr.wttr.in/Massy
+
+# Les phases de la lune actuellement en France
+curl fr.wttr.in/moon@+France
+
+# Avec options
+curl fr.wttr.in/Massy?0QF
+#0: Affiche seulement la météo de la journée en cours
+#Q: Affichage minimal
+#F: Ne pas afficher la phrase de publicité
+
+# Création d'une image au format png du résultat de la météo à Massy
+curl fr.wttr.in/Massy.png --output Massy.png
+
+# Image avec transparence
+curl fr.wttr.in/Massy_transparency=50.png --output Massy.png
+# Transparence de 0 à 255
 ```
 
 ## Affiche les dossiers les plus lourd dans un point de l'arborescence
