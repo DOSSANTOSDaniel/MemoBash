@@ -60,3 +60,22 @@ do
   done
 done
 ```
+## Autre exemple spécifique à la sélection de fichiers ou dossiers
+```bash
+#/bin/bash
+
+PS3="Votre choix : "
+files=($(ls -A .))
+
+echo -e "\n -- Menu fichiers -- "
+select ITEM in "${files[@]}" 'quitter'
+do
+  if [[ $ITEM == 'quitter' ]]
+  then
+    echo "Fin du programme!"
+    exit
+  else
+    echo -e "\n Fichier selectionné: ${ITEM} \n"
+  fi 
+done
+```
