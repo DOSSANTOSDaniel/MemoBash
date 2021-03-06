@@ -188,17 +188,17 @@ cat  /proc/net/arp
 cat  /proc/net/route
 
 #wifi :
-sudo cat  /proc/net/wireless
+cat  /proc/net/wireless
 
 #Login :
-sudo cat /proc/self/loginuid
+cat /proc/self/loginuid
 
 #OS type :
-sudo cat /proc/sys/kernel/ostype
+cat /proc/sys/kernel/ostype
 
 #Version du kernel :
-sudo cat /proc/sys/kernel/osrelease
+cat /proc/sys/kernel/osrelease
 
 #Version realease:
-sudo cat /proc/sys/kernel/version
+cat /proc/sys/kernel/version
 ```
