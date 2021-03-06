@@ -36,6 +36,8 @@ curl fr.wttr.in/Massy?0QF
 
 # Création d'une image au format png du résultat de la météo à Massy
 curl fr.wttr.in/Massy.png --output Massy.png
+ou
+curl -O fr.wttr.in/Massy.png
 
 # Image avec transparence
 curl fr.wttr.in/Massy_transparency=50.png --output Massy.png
@@ -115,13 +117,13 @@ curl -L -O url
 
 -O  sauvegarde le fichier avec le nom source
 
-## Commande permettant de supprimer tous les images et containers
+## Commande permettant de supprimer tous les images et containers d'un coup
 
 ```bash
 docker system prune
 ```
 
-## Garder la connexion en SSH
+## Garder la connexion SSH
 
 ```bash
 ssh -o "ServerAliveInterval 60" user@domain
@@ -139,7 +141,7 @@ dfc
 findsmb
 ```
 
-## Scanne des ordinateur possèdent un nom net-bios
+## Affiche les ordinateurs possédant un nom netbios sur un réseau
 
 ```bash
 
@@ -153,7 +155,7 @@ nbtscan -v -s : 192.168.1.0/24
 
 ```
 
-## Affiche l'adresse MAC
+## Affiche l'adresse MAC d'une machine
 
 ```bash
 cat /sys/class/net/eth0/address
@@ -163,7 +165,7 @@ cat /sys/class/net/eth0/address
 ```bash
 cat -n fichier.txt
 ```
-## Test de vitesse d'écriture et lecture disque
+## Test de vitesse d'écriture et lecture de disques
 
 ```bash
 #!/bin/bash
@@ -191,7 +193,7 @@ commande >> toto.txt
 
 ```
 
-## Permet de savoir si on est dans une vm ou une machine physique
+## Permet de savoir si on est dans une machiine virtuelle ou une machine physique
 
 ```bash
 sudo virt-what
