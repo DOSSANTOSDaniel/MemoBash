@@ -1,5 +1,4 @@
 # Création d'un Menu
-
 ```bash
 
 #!/bin/bash
@@ -33,4 +32,31 @@ do
   esac
 done
 
+```
+
+## Autre exemple de menu
+```bash
+#/bin/bash
+
+PS3="Votre choix : "
+options=('un' 'deux' 'trois' 'quitter[q/Q]')
+
+while :
+do
+  echo -e "\n -- Menu de traduction -- "
+  select ITEM in "${options[@]}"
+  do
+    case ${REPLY} in
+      1) echo -e "\n Traduction: one"
+        break;;
+      2) echo -e "\n Traduction: two"
+        break;;
+      3) echo -e "\n Traduction: tree"
+        break;;
+      4|Q|q) exit;;
+      *) echo -e "\n Choix incorrect"
+        break;;
+    esac
+  done
+done
 ```
