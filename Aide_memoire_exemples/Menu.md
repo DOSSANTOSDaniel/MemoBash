@@ -79,3 +79,52 @@ do
   fi 
 done
 ```
+## Autre exemple avec navigation entre fichiers et retour en arrière
+```bash
+#/bin/bash
+
+PS3="Votre choix : "
+total='.'
+files=($(ls ${total}))
+count=0
+
+# Fonctions
+menu() {
+echo -e "\n -- Menu fichiers -- "
+select ITEM in "${files[@]}" 'Retour' 'Quitter'
+do
+  if [[ "${ITEM}" == "Quitter" ]]
+  then
+    echo "Fin du script !"
+    exit 1
+  elif [[ "${ITEM}" == "Retour" ]]
+  then
+    retour
+    break
+  else
+    total="${total}/${ITEM}"
+    ((count++))
+    break
+  fi
+done
+}
+
+retour() {
+if [[ ${count} -gt 0 ]]
+then
+  total=$(dirname ${total})
+  ((count--))
+fi
+}
+
+while :
+do
+  files=($(ls ${total}))
+  menu
+  if [[ -f ${total} ]]
+  then
+    echo "le fichier : ${ITEM}"
+    exit 0
+  fi
+done
+```
