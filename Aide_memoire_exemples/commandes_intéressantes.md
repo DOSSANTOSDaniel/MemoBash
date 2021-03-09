@@ -208,7 +208,7 @@ trash-empty
 
 ```bash
 #Installation
-#gio est déjà installé sur la plupart des distributions Linux
+#gio est déjà installée sur la plupart des distributions Linux
 
 #Mettre un fichier à la corbeille
 gio trash <fichier>
