@@ -122,10 +122,6 @@ nbtscan 192.168.0.1-254
 
 nbtscan -v -s : 192.168.1.0/24
 ```
-## Affiche l'adresse MAC d'une machine
-```bash
-cat /sys/class/net/eth0/address
-```
 ## Affiche les numéros de lignes
 ```bash
 cat -n fichier.txt
@@ -167,6 +163,9 @@ cat  /proc/net/tcp | wc -l
 
 #Nombres de connections udp :
 cat  /proc/net/udp | wc -l
+
+# Affiche l'adresse MAC d'une machine
+cat /sys/class/net/eth0/address
 
 #Table arp :
 cat  /proc/net/arp
