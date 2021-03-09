@@ -221,5 +221,15 @@ gio list trash://
 
 #Vider la corbeille
 gio trash --empty
+```
+## Supprimer proprement un fichier avec la commande shred dans le but d'éviter une éventuelle récupération 
 
+```bash
+shred -fuvz -n 5 <fichier>
+
+# -f : Change les permissions en écriture si néceessaire. 
+# -u : Supprime le fichier après écrasement.
+# -v : Affiche la progression.
+# -z : Ajout de zeros à la fin.
+# -n : Nombres de phases d'écrasement du fichier.
 ```
