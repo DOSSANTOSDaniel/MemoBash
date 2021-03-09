@@ -73,6 +73,9 @@ espeak -s 145 -v fr "+Je vous souhaite une bonne journée !"
 
 # -s: vitesse de lecture
 # -v: langue
+
+#On peut aussi utiliser say
+say "Hello!"
 ```
 ## Installation des gestionnares de bureaux
 ```bash
