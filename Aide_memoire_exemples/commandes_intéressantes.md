@@ -186,3 +186,36 @@ cat /proc/sys/kernel/osrelease
 #Version realease:
 cat /proc/sys/kernel/version
 ```
+## Mise en place d'un système de corbeille en cli pour desktop ou serveurs
+### La commande trash
+```bash
+#Installation
+apt install trash-cli
+
+#Mettre un fichier à la corbeille
+trash-put <fichier>
+
+#Lister les fichiers dans la corbeille
+trash-list
+
+#Restorer les fichiers
+trash-restore
+
+#Vider la corbeille
+trash-empty
+```
+### La commande gio
+
+```bash
+#Installation
+#gio est déjà installé sur la plupart des distributions Linux
+
+#Mettre un fichier à la corbeille
+gio trash <fichier>
+
+#Lister les fichiers dans la corbeille
+gio list trash://
+
+#Vider la corbeille
+gio trash --empty
+```
