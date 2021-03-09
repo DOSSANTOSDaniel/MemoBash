@@ -218,4 +218,5 @@ gio list trash://
 
 #Vider la corbeille
 gio trash --empty
+
 ```
