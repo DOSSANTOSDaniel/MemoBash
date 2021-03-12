@@ -26,7 +26,7 @@ then
     fi
   elif (command -v dnf 2> /dev/null)
   then
-    dnf check-update > /dev/null
+    dnf check-update
     if ! (dnf install -qy ${app})
     then
       echo "'ERREUR' Installation de ${app} Impossible!"
@@ -34,7 +34,7 @@ then
     fi
   elif (command -v yum 2> /dev/null)
   then
-    yum check-update > /dev/null
+    yum check-update
     if ! (yum install -qy ${app})
     then
       echo " 'ERREUR' Installation de ${app} Impossible!"
@@ -53,8 +53,5 @@ fi
 
 app="${1}"
 
-if ! (command -v ${app} 2> /dev/null)
-then
-  i_need "${app}"
-fi
+! command -v ${app} 2> /dev/null && i_need "${app}"
 ```
