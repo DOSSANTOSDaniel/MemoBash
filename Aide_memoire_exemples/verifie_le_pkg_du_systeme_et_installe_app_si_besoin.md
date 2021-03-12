@@ -1,3 +1,14 @@
+# Fonctionnement du code :
+
+1. Vérifier si l'application est déjà instalée.
+2. Détection du système d'exploitation.
+3. Détection du gestionnaire de paquets a utiliser.
+4. Installation de l'application si l'application n'est pas installée.
+
+Compatibilité avec differents types d'installations :
+* Via gestionnaire de paquets (apt, yum et dnf).
+
+```bash
 #!/bin/bash
 
 i_need() {
@@ -46,3 +57,4 @@ if ! (command -v ${app} 2> /dev/null)
 then
   i_need "${app}"
 fi
+```
