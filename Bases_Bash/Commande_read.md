@@ -1,6 +1,6 @@
 # La commande read
 
-Permet de demander une saisie interactive.
+Permet de lire une ligne depuis l'entrée standard et d'y apporter certaines modifications.
 
 Exemple :
 
@@ -65,7 +65,7 @@ readonly est compatible POSIX et non POSIX.
 
 L'option -s permet de masquer l'affichage de la saisie, pratique pour la saisie de mots de passe, puis l'option -t permet de limité la saisie à dans ce cas 6 secondes :
 ```bash
-[daniel🐧iS3810](~)$ read -t 6 -a passtoto -p "Password : " -s
+[daniel🐧iS3810](~)$ read -t 6 -s -p "Password : " passtoto
 
 Password : 
  
@@ -85,6 +85,21 @@ Votre code non secret : 1254
 [daniel🐧iS3810](~)$ echo "${codetoto}"
 
 1254
+
+```
+
+L'option -e et -i permet d'enregistrer un message et la saisie de l'utilisateur dans la variable :
+
+```bash
+[daniel🐧iS3810](~)$ read -e -i "Ville : "
+
+Ville : Massy
+[daniel🐧iS3810](~)$ read -e -i "Ville : " ville
+
+Ville : Massy
+[daniel🐧iS3810](~)$ echo "$ville"
+
+Ville : Massy
 
 ```
 

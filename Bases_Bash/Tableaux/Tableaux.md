@@ -80,4 +80,41 @@ Affiche du deuxième champ au troisième champ :
 
 ```
 
+Ajouter un nouveau élément au tableau :
 
+```bash
+[daniel🐧iS3810](~)$ tab=(10 20 30)
+
+[daniel🐧iS3810](~)$ tab+=(40 50) 
+
+[daniel🐧iS3810](~)$ echo "${tab[@]}"
+
+10 20 30 40 50
+
+```
+
+Mettre à jour une nouvelle donnée, par exemple 10 en 00 :
+
+```bash
+[daniel🐧iS3810](~)$ tab=(10 20 30)
+
+[daniel🐧iS3810](~)$ tab[0]=00
+
+[daniel🐧iS3810](~)$ echo "${tab[@]}"
+
+00 20 30
+
+```
+
+Supprimer un élément du tableau :
+
+```bash
+[daniel🐧iS3810](~)$ tab=(10 20 30)
+
+[daniel🐧iS3810](~)$ unset tab[1]
+
+[daniel🐧iS3810](~)$ echo "${tab[@]}"
+
+10 30
+
+```
