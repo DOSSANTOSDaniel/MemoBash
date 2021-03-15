@@ -73,6 +73,9 @@ espeak -s 145 -v fr "+Je vous souhaite une bonne journée !"
 
 # -s: vitesse de lecture
 # -v: langue
+
+#On peut aussi utiliser say
+say "Hello!"
 ```
 ## Installation des gestionnares de bureaux
 ```bash
@@ -119,10 +122,6 @@ nbtscan 192.168.0.1-254
 
 nbtscan -v -s : 192.168.1.0/24
 ```
-## Affiche l'adresse MAC d'une machine
-```bash
-cat /sys/class/net/eth0/address
-```
 ## Affiche les numéros de lignes
 ```bash
 cat -n fichier.txt
@@ -165,6 +164,9 @@ cat  /proc/net/tcp | wc -l
 #Nombres de connections udp :
 cat  /proc/net/udp | wc -l
 
+# Affiche l'adresse MAC d'une machine
+cat /sys/class/net/eth0/address
+
 #Table arp :
 cat  /proc/net/arp
 
@@ -185,4 +187,48 @@ cat /proc/sys/kernel/osrelease
 
 #Version realease:
 cat /proc/sys/kernel/version
+```
+## Mise en place d'un système de corbeille en cli pour desktop ou serveurs
+### La commande trash
+```bash
+#Installation
+apt install trash-cli
+
+#Mettre un fichier à la corbeille
+trash-put <fichier>
+
+#Lister les fichiers dans la corbeille
+trash-list
+
+#Restorer les fichiers
+trash-restore
+
+#Vider la corbeille
+trash-empty
+```
+### La commande gio
+
+```bash
+#Installation
+#gio est déjà installée sur la plupart des distributions Linux
+
+#Mettre un fichier à la corbeille
+gio trash <fichier>
+
+#Lister les fichiers dans la corbeille
+gio list trash://
+
+#Vider la corbeille
+gio trash --empty
+```
+## Supprimer proprement un fichier avec la commande shred dans le but d'éviter une éventuelle récupération 
+
+```bash
+shred -fuvz -n 5 <fichier>
+
+# -f : Change les permissions en écriture si néceessaire. 
+# -u : Supprime le fichier après écrasement.
+# -v : Affiche la progression.
+# -z : Ajout de zeros à la fin.
+# -n : Nombres de phases d'écrasement du fichier.
 ```
