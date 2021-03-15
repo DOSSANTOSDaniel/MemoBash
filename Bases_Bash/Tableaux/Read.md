@@ -20,8 +20,7 @@ Images
 | IFS=$'\n' | C'est une variable de shell, qui permet de définir les séparateur de champs sur l’interpréteur de commandes. |
 | -r | Indique de ne pas interpréter les '\' si besoin. |
 | -d | Délimiteur de champs, ici découpe les champs par des espaces. |
-| -a | Affecte les mots lus séquentiellement à la variable
-    		tableau. |
+| -a | Affecte les mots lus séquentiellement à la variable tableau. |
 
 La variable IFS dans notre cas elle permet d'indiquer que les champs ne son plus délimités par des espaces mais par des sauts de ligne dans le but de se prémunir des nom de fichiers avec espaces.
 
@@ -131,6 +130,6 @@ Prenom : olivier
 ```
 
 Ici on peut voir que les champs ont été séparé par des ':' daniel:filipe ana nicolas:olivier.
-                                                           |  1  ||       2         || 3   |
-                                                           +-----++-----------------++-----+
+                                                           ```|  1  ||       2         || 3   |
+                                                           +-----++-----------------++-----+```
 Il y a 3 parties, la séparation n'est plus faite par des espaces!
