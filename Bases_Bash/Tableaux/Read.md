@@ -130,6 +130,6 @@ Prenom : olivier
 ```
 
 Ici on peut voir que les champs ont été séparé par des ':' daniel:filipe ana nicolas:olivier.
-                                                           ```|  1  ||       2         || 3   |
-                                                           +-----++-----------------++-----+```
+                                                           ```|  1  ||       2         || 3   |```
+                                                           ```+-----++-----------------++-----+```
 Il y a 3 parties, la séparation n'est plus faite par des espaces!
