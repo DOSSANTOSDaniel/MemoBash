@@ -8,26 +8,23 @@ for i in *
 do  
   # variable
   file_name="${i}"
-
+  dir_name=$(dirname "${file_name}")
+  base_name=$(basename "${file_name}")
+  
   # Substituer 
-  sub_name="$(echo ${i} | sed 's/[^[:alnum:]]/-/g' | tr '[:upper:]' '[:lower:]')"
+  sub_name="$(echo ${base_name} | sed 's/[^[:alnum:]]/-/g' | tr '[:upper:]' '[:lower:]')"
 
   # renomer les fichiers
   if [[ "${file_name}" != "${sub_name}" ]]
   then
-    mv "${file_name}" "${sub_name}"
-    if [[ "${?}" == "0" ]]
+    if (mv "${dir_name}/${file_name}" "${dir_name}/${sub_name}")
     then
       echo "renome ok !"
-      file_name="${sub_name}"
     else
       echo " ERREUR pour renomer le fichier !"
       exit 1
     fi
   fi
-
-  echo "${file_name}"
-
 done
 
 ```
