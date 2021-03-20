@@ -29,6 +29,6 @@ ex:
 dpkg -i nom
 dpkg --install nom
 
-## Comment documenter mes scripts
+## Pourquoi documenter mes scripts
 
 Il est important de toujours documenter son code pour que nous puissions l'améliorer ou le réparer même dans 2 ans et aussi pour que d'autres personnes puissent le poursuivre plus facilement ou si jamais nous avons besoin d'un bout de code pour un autre script alors on comprendras mieux le code si c'est bien commenté.
