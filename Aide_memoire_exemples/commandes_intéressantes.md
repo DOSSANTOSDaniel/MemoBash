@@ -1,4 +1,19 @@
-# Mémo des commandes et autre 
+# Mémo des commandes et autre
+
+## Afficher des commandes par rapport à leurs fonctionnalitées
+
+Exemple je cherche une commande pour travailler avec du Markdown :
+
+```bash
+┌──[daniel🐧iS3810]-(~)
+│
+└─$ man -k 'markdown'
+
+HTML::FormatMarkdown (3pm) - Format HTML as Markdown
+mdp (1)              - A command-line based markdown presentation tool
+
+```
+
 ```bash
 #La commande yes pour répondre automatiquement ex:
 
