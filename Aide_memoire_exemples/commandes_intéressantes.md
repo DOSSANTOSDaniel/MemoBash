@@ -14,11 +14,6 @@ mdp (1)              - A command-line based markdown presentation tool
 
 ```
 
-```bash
-#La commande yes pour répondre automatiquement ex:
-
-yes | apt-get install htop
-```
 ## Diagnostique réseau
 ```bash
 #mtr permet d'afficher en continu les résultats d'envois de paquets avec des statistiques détaillées.
