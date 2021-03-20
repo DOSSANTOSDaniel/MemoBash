@@ -17,7 +17,7 @@
 * Espacer.
 * Indenter.
 * Créer des variables explicites. 
-* Utiliser $(toto) au lieux de `toto`.
+* Utiliser $(toto) au lieux de ``toto``.
 * Avant de quitter un script par une erreur toujours décrire cette erreur.
 * Utiliser le plus possible les enchainements de commandes avec &&||| ;...
 
