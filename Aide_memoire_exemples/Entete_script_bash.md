@@ -1,4 +1,7 @@
 
+# Exemple d'entête de script en Bash
+
+```bash
 #!/bin/bash
 #-*- coding: UTF8 -*-
 
@@ -34,3 +37,4 @@ set -eu
 
 ### Main ###
 
+```
