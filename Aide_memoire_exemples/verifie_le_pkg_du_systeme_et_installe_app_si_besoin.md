@@ -1,11 +1,11 @@
 # Fonctionnement du code :
 
-1. Vérifier si l'application est déjà instalée.
+1. Vérifier si l'application est déjà installée.
 2. Détection du système d'exploitation.
 3. Détection du gestionnaire de paquets a utiliser.
 4. Installation de l'application si l'application n'est pas installée.
 
-Compatibilité avec differents types d'installations :
+Compatibilité avec différents types d'installations :
 * Via gestionnaire de paquets (apt, yum et dnf).
 
 ```bash

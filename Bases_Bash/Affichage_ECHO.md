@@ -4,7 +4,7 @@ La commande echo permet d'afficher une valeur.
 
 ## Paramétrés utiles
 
-Le paramétre "-e" permet l’interprétation de certaines commandes.
+Le paramètre "-e" permet l’interprétation de certaines commandes.
 
 | Commandes | Description |
 |:---|:---|

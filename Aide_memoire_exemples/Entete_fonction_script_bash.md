@@ -1,7 +1,7 @@
 # Exemple d'entête pour une fonction
 
 ```bash
-#---------Titre function---------
+#---------Title function---------
 # DESC: 
 # GLOBALS:
 # ARGS: 
@@ -21,7 +21,7 @@
 
 ```bash
 #---------exist_user---------
-# DESC: Vérifie si un utilisateur est present dans le système.
+# DESC: Vérifie si un utilisateur est présent dans le système.
 # GLOBALS: 
 # ARGS: $1
 # OUTS: Affiche le résultat

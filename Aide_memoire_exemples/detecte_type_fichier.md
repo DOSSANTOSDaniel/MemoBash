@@ -1,4 +1,4 @@
-# Detection du type de fichier (MIME)
+# Détection du type de fichier (MIME)
 
 
 ```bash

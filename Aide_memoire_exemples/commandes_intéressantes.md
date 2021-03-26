@@ -49,7 +49,7 @@ curl -O fr.wttr.in/Massy.png
 curl fr.wttr.in/Massy_transparency=50.png --output Massy.png
 # Transparence de 0 à 255
 ```
-## Affiche les dossiers ou fichiers avec leur taille representée graphiquement.
+## Affiche les dossiers ou fichiers avec leur taille représentée graphiquement.
 ```bash
 ncdu
 ```
@@ -105,7 +105,7 @@ curl -L -O url
 
 #-O  sauvegarde le fichier avec le nom source
 ```
-## Commande permettant de supprimer tous les images et containers d'un coup
+## Commande permettant de supprimer toutes les images et containers d'un coup
 ```bash
 docker system prune
 ```
@@ -160,7 +160,7 @@ commande | tee -a output.txt
 #pareil que:
 commande >> toto.txt
 ```
-## Permet de savoir si on est dans une machiine virtuelle ou une machine physique
+## Permet de savoir si on est dans une machine virtuelle ou une machine physique
 ```bash
 sudo virt-what
 ou
@@ -236,9 +236,9 @@ gio trash --empty
 ```bash
 shred -fuvz -n 5 <fichier>
 
-# -f : Change les permissions en écriture si néceessaire. 
+# -f : Change les permissions en écriture si nécessaire. 
 # -u : Supprime le fichier après écrasement.
 # -v : Affiche la progression.
-# -z : Ajout de zeros à la fin.
+# -z : Ajout de zéros à la fin.
 # -n : Nombres de phases d'écrasement du fichier.
 ```

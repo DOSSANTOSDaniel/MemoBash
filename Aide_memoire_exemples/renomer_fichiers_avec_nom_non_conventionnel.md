@@ -1,4 +1,4 @@
-# Renomer des fichiers qui ont des noms non conventionnels
+# Renommer des fichiers qui ont des noms non conventionnels
 
 ```bash
 
@@ -21,7 +21,7 @@ do
     then
       echo "renome ok !"
     else
-      echo " ERREUR pour renomer le fichier !"
+      echo " ERREUR pour renommer le fichier !"
       exit 1
     fi
   fi

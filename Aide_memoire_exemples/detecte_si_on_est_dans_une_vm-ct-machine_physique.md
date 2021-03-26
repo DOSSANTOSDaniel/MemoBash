@@ -1,4 +1,4 @@
-# Code permettant de détécter si on est connecté sur :
+# Code permettant de détecter si on est connecté sur :
 1. Une machine physique.
 2. Une VM KVM ou VirtualBox
 3. Un conteneur Docker

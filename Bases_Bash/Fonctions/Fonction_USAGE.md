@@ -16,7 +16,7 @@ usage() {
   echo ""
   echo "$(basename ${0}) <Année de naissance>"
   echo ""
-  echo "'Année de naissance' doit comporter quatre nombes exemple : '1988'" 
+  echo "'Année de naissance' doit comporter quatre nombres exemple : '1988'" 
   echo ""
 }
 ``` 

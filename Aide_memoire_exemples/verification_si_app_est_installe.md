@@ -1,10 +1,10 @@
 # Fonctionnement du code :
 1. Détection du système d'exploitation.
-2. Détaction du gestionnaire de paquets a utiliser.
-3. Vérifier si l'application est déjà instalée ou pas.
+2. Détection du gestionnaire de paquets a utiliser.
+3. Vérifier si l'application est déjà installée ou pas.
 4. Installation de l'application si l'application n'est pas installée.
 
-Compatibilité avec differents types d'installations :
+Compatibilité avec différents types d'installations :
 1. Manuelle.
 2. Via gestionnaire de paquets (apt, yum et dnf).
 

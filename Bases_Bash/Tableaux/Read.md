@@ -99,7 +99,7 @@ Vidéos
 
 ## Autres exemples d'utilisation d'IFS
 
-Avec la valeur d'IFS par defaut :
+Avec la valeur d'IFS par défaut :
 
 ```bash
 [daniel🐧iS3810](~)$ set | grep ^IFS=
@@ -108,11 +108,11 @@ IFS=$' \t\n'
 
 [daniel🐧iS3810](~)$ var="daniel:filipe ana nicolas:olivier"
 
-[daniel🐧iS3810](~)$ for i in ${var}; do echo "Prenom : ${i}"; done
+[daniel🐧iS3810](~)$ for i in ${var}; do echo "Prénom : ${i}"; done
 
-Prenom : daniel:filipe
-Prenom : ana
-Prenom : nicolas:olivier
+Prénom : daniel:filipe
+Prénom : ana
+Prénom : nicolas:olivier
 
 ```
 
@@ -121,11 +121,11 @@ Avec une valeur d'IFS modifiée :
 ```bash
 [daniel🐧iS3810](~)$ IFS=$':'
 
-[daniel🐧iS3810](~)$ for i in ${var}; do echo "Prenom : ${i}"; done
+[daniel🐧iS3810](~)$ for i in ${var}; do echo "Prénom : ${i}"; done
 
-Prenom : daniel
-Prenom : filipe ana nicolas
-Prenom : olivier 
+Prénom : daniel
+Prénom : filipe ana nicolas
+Prénom : olivier 
 
 ```
 

@@ -75,7 +75,7 @@ do
     echo "Fin du programme!"
     exit
   else
-    echo -e "\n Fichier selectionné: ${ITEM} \n"
+    echo -e "\n Fichier sélectionné: ${ITEM} \n"
   fi 
 done
 ```

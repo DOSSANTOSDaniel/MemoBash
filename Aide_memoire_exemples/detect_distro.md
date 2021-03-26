@@ -1,4 +1,4 @@
-# Détéction de l'OS et de la distribution
+# Détection de l'OS et de la distribution
 Fonctionne sur :
 1. MAC OSX
 2. BSD

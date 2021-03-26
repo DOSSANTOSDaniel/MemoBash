@@ -1,5 +1,5 @@
 
-# Template de script Bash
+# Modèle de script Bash
 
 ```bash
 #!/bin/bash

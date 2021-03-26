@@ -98,11 +98,6 @@ _flatpak:x:130:140:Flatpak system-wide installation helper,,,:/nonexistent:/usr/
 
 ```
 
-Récupérer la fréquence du CPU :
-
-```bash
-
-```
 
 ```bash
 [daniel🐧iS3810](~)$ awk -F ':' '{print $1, $7}' /etc/passwd

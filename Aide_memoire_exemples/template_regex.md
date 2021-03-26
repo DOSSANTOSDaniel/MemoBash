@@ -54,7 +54,7 @@ else
   echo "non validé"
 fi
 ```
-## Email
+## Émail
 
 Format : user@host.xxx
 
