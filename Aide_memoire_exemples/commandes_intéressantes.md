@@ -250,3 +250,24 @@ for i in {1..10000}; do echo -en "$i\r"; done
 ```bash
 sort -n -t':' -k 3 /etc/passwd 
 ```
+## Afficher des information sur un utilisateur
+
+```bash
+# Avec la commande pinky
+┌──[daniel🐧iS3810]-(~)
+│
+└─$ pinky -l daniel
+
+Identifiant : daniel                      Nom réel :  daniel
+Répertoire : /home/daniel                 Interpréteur :  /bin/bash
+
+# Avec la commande id
+┌──[daniel🐧iS3810]-(~)
+│
+└─$ id daniel
+
+uid=1000(daniel) gid=1000(daniel) groupes=1000(daniel),4(adm),20(dialout),24(cdrom),27(sudo),30(dip),46(plugdev),108(kvm),121(lpadmin),131(lxd),132(sambashare),134(libvirt),136(docker)
+
+
+
+```
