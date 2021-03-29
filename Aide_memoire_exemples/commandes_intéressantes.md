@@ -242,3 +242,7 @@ shred -fuvz -n 5 <fichier>
 # -z : Ajout de zéros à la fin.
 # -n : Nombres de phases d'écrasement du fichier.
 ```
+## Afficher un résusltat qui se rafraîchie en une seule ligne
+```bash
+for i in {1..10000}; do echo -en "$i\r"; done
+```
