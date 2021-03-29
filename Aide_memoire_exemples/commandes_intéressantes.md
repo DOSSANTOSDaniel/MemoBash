@@ -246,3 +246,7 @@ shred -fuvz -n 5 <fichier>
 ```bash
 for i in {1..10000}; do echo -en "$i\r"; done
 ```
+## Faire un tri numérique sur une colonne en particulier à partir d'un fichier
+```bash
+sort -n -t':' -k 3 /etc/passwd 
+```
