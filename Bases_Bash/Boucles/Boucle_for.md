@@ -41,3 +41,44 @@ Quelques exemples :
 | {1..5} | plage de 1 à 5, accepte aussi les valeurs négatives |
 | a b c | découpe chaque occurrence séparée par un espace, a,b et c |
 | a 'b c' | avec les simples ou doubles cotes on peut modifier la découpe, a et 'b c', ici 'b c' est considérer comme une occurrence. |
+
+## On peut aussi utiliser une syntaxe proche du language C pour créer une boucle for
+
+```bash
+for (( expr1; expr2; expr3 ))
+do
+ command1
+ command2
+ ..
+done
+```
+Explication :
+
+```
+                                     for (( "expression1"; "expression2"; "expression3" ))
+                                                  ▲               ▲             ▲
+                                                  │               │             │
+Initialise la variable d'itération.───────────────┘               │             │
+                                                                  │             │
+La boucle continue jusqu'à ce que cette valeur soit vraie.────────┘             │
+                                                                                │
+Incrémente la variable d'itération.─────────────────────────────────────────────┘
+```
+Exemple avec une boucle for permettant de faire une multiplication :
+
+```bash
+#!/bin/bash
+
+nb1="8"
+multiplicateur="2"
+resultat=0
+
+for (( i=0; i <= multiplicateur-1; i++ ))
+do
+  (( resultat += nb1 ))
+done
+
+echo "${resultat}"
+
+```
+
