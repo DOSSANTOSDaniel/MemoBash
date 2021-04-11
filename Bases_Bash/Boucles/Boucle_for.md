@@ -52,18 +52,6 @@ do
  ..
 done
 ```
-Explication :
-
-```
-                                     for (( "expression1"; "expression2"; "expression3" ))
-                                                  ▲               ▲             ▲
-                                                  │               │             │
-Initialise la variable d'itération.───────────────┘               │             │
-                                                                  │             │
-La boucle continue jusqu'à ce que cette valeur soit vraie.────────┘             │
-                                                                                │
-Incrémente la variable d'itération.─────────────────────────────────────────────┘
-```
 Exemple avec une boucle for permettant de faire une multiplication :
 
 ```bash
@@ -81,4 +69,15 @@ done
 echo "${resultat}"
 
 ```
+Explication :
 
+```
+                                     for (( "expression1"; "expression2"; "expression3" ))
+                                                  ▲               ▲             ▲
+                                                  │               │             │
+Initialise la variable d'itération.───────────────┘               │             │
+                                                                  │             │
+La boucle continue jusqu'à ce que cette valeur soit vraie.────────┘             │
+                                                                                │
+Incrémente la variable d'itération.─────────────────────────────────────────────┘
+```
