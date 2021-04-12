@@ -52,10 +52,12 @@ Expansion de chaînes de caractères :
 | "${#var}" | retourne le nombre de caractères |
 | "${!var}" | exécute le contenu de $var (voir exemple) |
 | "${!texte*}" | retourne les noms de variables commençant par "texte" |
-| "${var:N}" | retourne du texte à partir de la position N |
-| "${var:N: X}" | retourne du texte à partir de la position N jusqu’à la position X |
-| "${var#texte}" | coupe "texte" du début de la chaîne de caractère |
-| "${var%texte}" | coupe "texte" à la fin de la chaîne de caractère |
+| "${var:N}" | retourne le texte à partir de la position du caractère N |
+| "${var:N:X}" | retourne le texte à partir de la position du caractère N jusqu’à la position X (${var:position:longueur})|
+| "${var#texte}" | coupe "texte" du début de la chaîne de caractère vers la fin|
+| "${var%texte}" | coupe "texte" de la fin de la chaîne de caractère vers le début |
+| "${var##texte}" | coupe "texte" du début de la chaîne de caractère vers la fin et toutes les occurences |
+| "${var%%texte}" | coupe "texte" de la fin de la chaîne de caractère vers le début et toutes les occurences|
 | "${var/texte/'nouveau texte'}" | substitut "texte" par "nouveau texte" une seule fois |
 | "${var//texte/'nouveau texte'}" | substitut "texte" par "nouveau texte" partout |
 | "${var/#texte/'nouveau texte'}" | substitut "texte" par "nouveau texte" si la chaîne de caractère commence par "texte"|
