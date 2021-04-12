@@ -119,3 +119,11 @@ echo "${var/un/deux}"
 deux bonjour
 
 ```
+
+Connaitre la position d'une lettre dans une chaine de caractère :
+
+```bash
+daniel@debian:~$ var="Daniel"
+daniel@debian:~$ expr index ${var} a
+2
+```
