@@ -7,7 +7,7 @@ Expansion conditionnelle :
 | "${var:-texte}" | si la variable "var" n'est pas définie, cela renvoi la valeur "texte" sans définir la variable var et si elle est définie alors cela envois ça valeur. |
 | "${var:=texte}" | si la variable "var" n'est pas définie, cela renvoi la valeur "texte" et définie la variable var avec la valeur "texte", si elle est définie et non vide alors elle renvoi sont contenue. |
 | "${var=texte}" | si var est définie, son contenue sera utilisé même s'il est vide, dans le cas contraire cela renvoi 'texte'. |
-| "${var:?texte}" | si la variable "var" n'est pas définie, cela renvoi l'erreur "texte". |
+| "${var:?texte}" | si la variable "var" n'est pas définie, cela renvoi l'erreur "texte" et termine l'exécution du script. |
 | "${var:+texte}" | si la variable "var" est définie, cela retourne la valeur "texte" si non cela retourne une valeur vide.  |
 
 Exemple :
