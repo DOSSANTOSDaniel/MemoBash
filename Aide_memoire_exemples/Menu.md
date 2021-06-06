@@ -129,3 +129,66 @@ done
 
 echo "Fichier : $full_path"
 ```
+## Autre exemple d'un menu de navigation permetant de rechercher des fichiers de type ISO
+```bash
+#!/bin/bash
+
+set -eu
+
+IFS=$'\n'
+PS3='Votre choix: '
+
+full_path='/home'
+count=0
+
+while :
+do
+  echo -e "\n[-- Menu fichiers --->\n"
+
+  mapfile -t files < <(ls ${full_path})
+
+  select ITEM in "${files[@]}" 'Retour' 'Quitter'
+  do
+    if [[ "${ITEM}" == "Quitter" ]]
+    then
+      exit 1
+    elif [[ "${ITEM}" == "Retour" ]]
+    then
+      if [[ ${count} -gt 0 ]]
+      then
+        full_path=$(dirname "$full_path")
+        set +e
+        (( count-- ))
+        set -e
+      fi
+      break
+    else
+      full_path="${full_path}/${ITEM}"
+      set +e
+      (( count++ ))
+      set -e
+      break
+    fi
+  done
+
+  if [[ -f "$full_path" ]]
+  then
+    ext=$(mimetype $full_path | cut -d':' -f2 | cut -d'/' -f2)
+    
+    if [[ $ext == 'x-cd-image' ]]
+    then
+      break
+    else
+      select_file=$(basename $full_path)
+      echo -e "\n Le fichier $select_file n'est pas un fichier ISO valide ! \n"
+      read -p "Valider avec une touche pour continuer"
+      full_path=$(dirname "$full_path")
+      set +e
+      (( count-- ))
+      set -e
+    fi
+  fi
+done
+
+echo "Fichier : $full_path"
+```
