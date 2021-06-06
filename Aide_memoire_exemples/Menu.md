@@ -81,50 +81,51 @@ done
 ```
 ## Autre exemple avec navigation entre fichiers et retour en arrière
 ```bash
-#/bin/bash
+#!/bin/bash
 
-PS3="Votre choix : "
-total='.'
-files=($(ls ${total}))
+set -eu
+
+IFS=$'\n'
+PS3='Votre choix: '
+
+full_path='/home'
 count=0
-
-# Fonctions
-menu() {
-echo -e "\n -- Menu fichiers -- "
-select ITEM in "${files[@]}" 'Retour' 'Quitter'
-do
-  if [[ "${ITEM}" == "Quitter" ]]
-  then
-    echo "Fin du script !"
-    exit 1
-  elif [[ "${ITEM}" == "Retour" ]]
-  then
-    retour
-    break
-  else
-    total="${total}/${ITEM}"
-    ((count++))
-    break
-  fi
-done
-}
-
-retour() {
-if [[ ${count} -gt 0 ]]
-then
-  total=$(dirname ${total})
-  ((count--))
-fi
-}
 
 while :
 do
-  files=($(ls ${total}))
-  menu
-  if [[ -f ${total} ]]
+  echo -e "\n[-- Menu fichiers --->\n"
+
+  mapfile -t files < <(ls ${full_path})
+
+  select ITEM in "${files[@]}" 'Retour' 'Quitter'
+  do
+    if [[ "${ITEM}" == "Quitter" ]]
+    then
+      exit 1
+    elif [[ "${ITEM}" == "Retour" ]]
+    then
+      if [[ ${count} -gt 0 ]]
+      then
+        full_path=$(dirname "$full_path")
+        set +e
+        (( count-- ))
+        set -e
+      fi
+      break
+    else
+      full_path="${full_path}/${ITEM}"
+      set +e
+      (( count++ ))
+      set -e
+      break
+    fi
+  done
+
+  if [[ -f "$full_path" ]]
   then
-    echo "le fichier : ${ITEM}"
-    exit 0
+    break
   fi
 done
+
+echo "Fichier : $full_path"
 ```
