@@ -9,6 +9,10 @@ Expansion conditionnelle :
 | "${var=texte}" | si var est définie, son contenue sera utilisé même s'il est vide, dans le cas contraire cela renvoi 'texte'. |
 | "${var:?texte}" | si la variable "var" n'est pas définie, cela renvoi l'erreur "texte" et termine l'exécution du script. |
 | "${var:+texte}" | si la variable "var" est définie, cela retourne la valeur "texte" si non cela retourne une valeur vide.  |
+| "${var^}" | Majuscule sur le premiier caractère. |
+| "${var^^:}" | Majuscules sur tous les caractères. |
+| "${var,}" | Mainuscule sur le premiier caractère. |
+| "${var,,}" | Minuscules sur tous les caractères. |
 
 Exemple :
 
