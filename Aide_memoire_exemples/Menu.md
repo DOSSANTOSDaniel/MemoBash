@@ -93,6 +93,7 @@ count=0
 
 while :
 do
+  clear
   echo -e "\n[-- Menu fichiers --->\n"
 
   mapfile -t files < <(ls ${full_path})
@@ -108,26 +109,31 @@ do
       then
         full_path=$(dirname "$full_path")
         set +e
-        (( count-- ))
+        ((count--))
         set -e
+        break
+      elif [[ ${count} -eq "0" ]]
+      then
+        full_path="$full_path"
+        break
       fi
-      break
     else
       full_path="${full_path}/${ITEM}"
-      set +e
-      (( count++ ))
-      set -e
-      break
+      
+      if [[ -f "$full_path" ]]
+      then
+        select_file=$(basename $full_path)
+        echo -e "\n Le fichier selectionné est $select_file ! \n"
+        exit 1
+      else
+        set +e
+        ((count++))
+        set -e
+        break
+      fi
     fi
   done
-
-  if [[ -f "$full_path" ]]
-  then
-    break
-  fi
 done
-
-echo "Fichier : $full_path"
 ```
 ## Autre exemple d'un menu de navigation permetant de rechercher des fichiers de type ISO
 ```bash
