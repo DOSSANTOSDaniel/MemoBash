@@ -267,7 +267,13 @@ Répertoire : /home/daniel                 Interpréteur :  /bin/bash
 └─$ id daniel
 
 uid=1000(daniel) gid=1000(daniel) groupes=1000(daniel),4(adm),20(dialout),24(cdrom),27(sudo),30(dip),46(plugdev),108(kvm),121(lpadmin),131(lxd),132(sambashare),134(libvirt),136(docker)
-
-
-
+```
+## Récupérer les codes transmis par le clavier
+*. Scancode
+```Bash
+showkey -s
+```
+*. Keycode
+```Bash
+showkey -k
 ```
