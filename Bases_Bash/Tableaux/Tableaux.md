@@ -1,6 +1,6 @@
 # Les tableaux
 
-Déclarer un tableau :
+## Déclarer un tableau
 
 ```bash
 tab=(1 5 9)
@@ -17,25 +17,6 @@ declare -a tab
 
 tab=(1 5 9)
 
-```
-
-Déclaration d'un tableau associatif :
-```bash
-declare -A tab
-
-tab[fruit]=orange
-tab[fleur]=rose
-tab[animal]=chien
-```
-ou
-```bash
-declare -A tab
-
-tab=(
-  ["fruit"]="orange"
-  ["fleur"]="rose"
-  ["animal"]="chien"
-)
 ```
 
 Affiche le champ à la l'index 2 :
@@ -117,4 +98,41 @@ Supprimer un élément du tableau :
 
 10 30
 
+```
+
+## Déclaration d'un tableau associatif
+```bash
+declare -A tab
+
+tab[fruit]=orange
+tab[fleur]=rose
+tab[animal]=chien
+```
+ou
+```bash
+declare -A tab
+
+tab=(
+  ["fruit"]="orange"
+  ["fleur"]="rose"
+  ["animal"]="chien"
+)
+```
+Afficher les clés :
+
+```Bash
+┌──[daniel👾archos]-(~)
+│
+└─$ echo ${!tab[@]}
+
+fruit animal fleur
+```
+Afficher les valeurs :
+
+```Bash
+┌──[daniel👾archos]-(~)
+│
+└─$ echo ${tab[@]}
+
+orange chien rose
 ```
