@@ -31,7 +31,7 @@ Il y a plusieurs manières d'écrire le caractère espace(ESC) :
 | Soulignage double | 21 |
 | Surlignage | 53 |
 
-## couleurs de la police
+## couleurs basiques de la police
 
 | Descriptions | Codes |
 |:---:|:---:|
@@ -59,7 +59,7 @@ Le code 38 suivie de 5;(n) :
 * Valeur (n) de 16 à 255 correspond à plus de nuances de couleurs.
 * On peut aussi utiliser le code 38 suivie de 2;r;g;b avec pour chaque argument(r,g,b) la possibilité d'avoir de 0 à 255 Valeurs.
 
-## couleurs de fond
+## couleurs basiques de fond
 
 | Descriptions | Codes |
 |:---:|:---:|
