@@ -1,4 +1,4 @@
-# Mise en forme sur Bash
+# Mise en forme et couleurs dans un script Bash
 
 Les terminaux de type ANSI/VT100 permettent d'afficher de la couleur et de proposer des effets de caractère.
 
