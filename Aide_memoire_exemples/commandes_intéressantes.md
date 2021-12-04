@@ -277,3 +277,8 @@ showkey -s
 ```Bash
 showkey -k
 ```
+## Afficher les charactères invisibles sur un document à la ligne désirée
+Exemple à la ligne 197 :
+```Bash
+cat -A toto.sh | sed -n 197p 
+```
