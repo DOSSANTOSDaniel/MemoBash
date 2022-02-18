@@ -282,3 +282,38 @@ Exemple à la ligne 197 :
 ```Bash
 cat -A toto.sh | sed -n 197p 
 ```
+## Permet de rechercher des fichiers
+```Bash
+fzf
+```
+## Point de montage via SSH
+```Bash
+sshfs
+```
+## Plan 
+```Bash
+telnet mapscii.me
+```
+## Voir les autres pages des manuels
+```Bash
+man passwd.5
+```
+## Exporter en pdf les pages de manuel
+```Bash
+sudo apt install groff
+man -Tpdf ls > ls.pdf
+```
+## Vérification de la signature
+```Bash
+sha1_code='4904c8a6df8bac8291b7b7582c26c4da9439f1cf' ; check_sha="$(sha1sum archlinux-2021.08.01-x86_64.iso | awk '{print $1}')" ; [[ $check_sha == $sha1_code ]] && echo 'Vérifié' || echo 'Non vérifié'
+```
+## L'option -i.bak de sed permet de faire un backup avant de modifier un fichier
+```Bash
+sed -i.bak 
+```
+## Afficher une image à partir du terminal
+```Bash
+eog img.png
+ou
+display img.png
+```
