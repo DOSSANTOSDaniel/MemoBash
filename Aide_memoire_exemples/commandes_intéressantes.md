@@ -309,7 +309,7 @@ sha1_code='4904c8a6df8bac8291b7b7582c26c4da9439f1cf' ; check_sha="$(sha1sum arch
 ```
 ## L'option -i.bak de sed permet de faire un backup avant de modifier un fichier
 ```Bash
-sed -i.bak 
+sed -i.bak "s/loglevel=3 quiet/loglevel=4" /etc/default/grub
 ```
 ## Afficher une image à partir du terminal
 ```Bash
