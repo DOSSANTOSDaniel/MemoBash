@@ -14,3 +14,12 @@ else
 fi
 
 ```
+
+```Bash
+if [[ $(id -u) -ne 0 ]]
+then
+  echo "Le script doit être lancé en tant que root"
+  usage
+  exit 1
+fi   
+```
