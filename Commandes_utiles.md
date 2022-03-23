@@ -376,3 +376,8 @@ Par internet:
 [tmate](https://tmate.io/)
 [teleconsole](https://www.teleconsole.com/)
 [tsl0922](https://tsl0922.github.io/ttyd/)
+
+## Notification popup
+```Bash
+notify-send "Info IP" "Salut !
+```
