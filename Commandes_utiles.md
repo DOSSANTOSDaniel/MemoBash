@@ -381,3 +381,24 @@ Par internet:
 ```Bash
 notify-send "Info IP" "Salut !
 ```
+## Lancement de commandes en parallel
+```Bash
+#!/bin/bash
+
+task_1() {
+    echo "Tâche 1 en cours ..."
+    sleep 3
+}
+
+task_2() {
+    echo "Tâche 2 en cours ..."
+    sleep 3
+}
+
+task_1 &
+task_2 &
+
+wait
+
+echo "Fin de l'éxecution des tâches"
+```
