@@ -63,3 +63,25 @@ done
 sudo apt install progress
 cp toto.iso /tmp | progress -m
 ```
+### Autre barre de progression
+```Bash
+#!/bin/bash
+#set -x
+
+
+sleep 10 &
+cmd_pid=$!
+
+prog_bar='| / _ \'
+
+while kill -0 $cmd_pid 2&>1 > /dev/null;
+do
+    for bar in $prog_bar
+    do
+      echo -ne "\r > $bar ... En cours d'éxecution !" 
+      sleep 0.5
+    done
+done
+
+echo -e "\n" 
+```
