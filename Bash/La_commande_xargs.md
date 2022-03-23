@@ -1,6 +1,6 @@
 # La commande xargs
 
-permet de rediriger la sortie d'une commande comme argument vers une autre commande.
+Permet de rediriger la sortie d'une commande comme argument vers une autre commande.
 
 ## Syntaxe
 
