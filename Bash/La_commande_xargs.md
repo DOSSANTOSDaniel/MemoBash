@@ -24,7 +24,8 @@ cat files.txt | xargs rm -v
 ```
 
 ## Autre utilité
-Rediriger la sortie d'une commande en tant qu'argument vers une commande qui ne support pas le piping. 
+Rediriger la sortie d'une commande en tant qu'argument vers une commande qui ne support pas le piping.
+
 Exemple avec la commande date :
 
 ```Bash
@@ -45,7 +46,8 @@ Exemple :
 echo -n 123-456-7890 | xargs -d "-" -n 1 echo
 ```
 
-On peut représenter les arguments passés par un symbole, définition du symbole : -I(le symbole). 
+On peut représenter les arguments passés par un symbole, définition du symbole : -I(le symbole).
+
 Cela fonctionne comme une variable.
 ```Bash
 echo -n "123-456-789" | xargs -d - -n 1 -I{} echo {}
