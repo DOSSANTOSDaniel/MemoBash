@@ -16,13 +16,12 @@ l'option -I remplace l'argument.
 
 ## Exemples
 ```Bash
-
-```
 cat files.txt | xargs touch
-```Bash
-
 ```
+
+```Bash
 cat files.txt | xargs rm -v
+```
 
 ## Autre utilité
 Rediriger la sortie d'une commande en tant qu'argument vers une commande qui ne support pas le piping. 
