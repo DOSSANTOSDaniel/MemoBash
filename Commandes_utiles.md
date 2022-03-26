@@ -417,7 +417,7 @@ df -h --total | awk 'NR==1{print} END{print}'
 ```Bash
 fc
 ```
-## Affiche le type de périphérique de stockage
+## Affiche le model du périphérique de stockage
 
 Exemple :
 
