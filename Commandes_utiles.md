@@ -417,3 +417,19 @@ df -h --total | awk 'NR==1{print} END{print}'
 ```Bash
 fc
 ```
+## Affiche le type de périphérique de stockage
+
+Exemple :
+
+```Bash
+fdisk -l /dev/sda | grep -m1 ^Disk | awk '{print $3 " " $4}'
+
+SanDisk SSD
+```
+Ou
+
+```Bash
+cat /sys/class/block/sda/device/model
+
+SanDisk SSD PLUS
+```
