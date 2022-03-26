@@ -433,3 +433,32 @@ cat /sys/class/block/sda/device/model
 
 SanDisk SSD PLUS
 ```
+
+## Démarrer un processus puis le détacher du terminal
+
+Éxécution du processus :
+
+```Bash
+sleep 100
+```
+Interruption du processus :
+
+ctrl z
+
+Mettre le processus en tache de fond :
+
+```Bash
+bg
+```
+Afficher les processus en tache de fond dans le but d'obtenir leur pid :
+```Bash
+jobs
+```
+
+Détacher le processus :
+
+```Bash
+disown %<numéro processus(pid)>
+
+exit
+```
