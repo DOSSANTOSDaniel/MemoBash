@@ -412,3 +412,8 @@ Exemple :
 ```Bash
 df -h --total | awk 'NR==1{print} END{print}'
 ```
+## Edite la précédente commande dans un éditeur de texte et l'éxécute
+
+```Bash
+fc
+```
