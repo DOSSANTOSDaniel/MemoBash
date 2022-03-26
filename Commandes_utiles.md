@@ -402,3 +402,13 @@ wait
 
 echo "Fin de l'éxecution des tâches"
 ```
+## Afficher la première et la dernière ligne 
+
+Bash```
+awk 'NR==1{print} END{print}'
+```
+Exemple :
+
+Bash```
+df -h --total | awk 'NR==1{print} END{print}'
+```
