@@ -472,3 +472,18 @@ Avec la commande arp-scan
 ```Bash
 for i in 192.168.1.{1..80}; do ping -c 1 -W 1 $i > /dev/null && (echo "IP: $i" && echo "NAME : $(host $i | awk '{print $NF}')" && echo "OTHER : $(sudo arp-scan $i | sed -n '3p')" && echo "-----------------------------------") ; done
 ```
+## Afficher les interfaces réseau et leur adresse MAC
+
+```Bash
+
+┌──[daniel👾archos]-(~)
+│
+└─$ ip -br -c link show
+
+lo               UNKNOWN        00:00:00:00:00:00 <LOOPBACK,UP,LOWER_UP> 
+enp8s0           UP             xx:xx:xx:xx:xx:xx <BROADCAST,MULTICAST,UP,LOWER_UP> 
+virbr0           DOWN           52:54:00:70:a6:b5 <NO-CARRIER,BROADCAST,MULTICAST,UP> 
+virbr0-nic       DOWN           52:54:00:70:a6:b5 <BROADCAST,MULTICAST> 
+
+
+```
