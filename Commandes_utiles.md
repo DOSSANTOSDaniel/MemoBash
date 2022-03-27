@@ -520,6 +520,8 @@ cat file.part* > file.recombined
 
 Tester que les deux fichiers sont identiques :
 
+```Bash
 md5sum --binary file file.recombined
 916ffee83602f9f59b00cf0971de299f *file
 916ffee83602f9f59b00cf0971de299f *file.recombined
+```
