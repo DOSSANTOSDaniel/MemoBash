@@ -487,8 +487,39 @@ virbr0-nic       DOWN           52:54:00:70:a6:b5 <BROADCAST,MULTICAST>
 
 
 ```
+
 ## Affiche le nom de l'utilisateur courant
 
 ```Bash
 id -un
 ```
+
+## Combiner et séparer un fichier en plusieurs parties
+
+Diviser un fichier par parts de 6G :
+```Bash
+truncate -s 6G file
+```
+Autre manière de faire :
+
+```Bash
+split --bytes=2GB --numeric-suffixes file file.part
+```
+
+Utiliser --number=4 si vous souhaitez diviser le fichier en quatre morceaux de taille égale : 
+
+```Bash
+split --number=4 --numeric-suffixes file file.part
+```
+
+Pour les combiner, utilisez simplement cat :
+
+```Bash
+cat file.part* > file.recombined
+```
+
+Tester que les deux fichiers sont identiques :
+
+md5sum --binary file file.recombined
+916ffee83602f9f59b00cf0971de299f *file
+916ffee83602f9f59b00cf0971de299f *file.recombined
