@@ -462,3 +462,13 @@ disown %<numéro processus(pid)>
 
 exit
 ```
+## Scanner le réseau local et afficher le nom et adresse ip des machines connectées 
+
+```Bash
+for i in 192.168.1.{1..254}; do ping -c 1 -W 1 $i > /dev/null && (echo "IP: $i" && echo "NAME : $(host $i | awk '{print $NF}' | grep .$)" && echo "-----------------------------------") ; done
+```
+Avec la commande arp-scan
+
+```Bash
+for i in 192.168.1.{1..80}; do ping -c 1 -W 1 $i > /dev/null && (echo "IP: $i" && echo "NAME : $(host $i | awk '{print $NF}' | grep .$)" && echo "OTHER : $(sudo arp-scan $i | sed -n '3p')" && echo "-----------------------------------") ; done
+```
