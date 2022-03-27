@@ -487,3 +487,8 @@ virbr0-nic       DOWN           52:54:00:70:a6:b5 <BROADCAST,MULTICAST>
 
 
 ```
+## Affiche le nom de l'utilisateur courant
+
+```Bash
+id -un
+```
