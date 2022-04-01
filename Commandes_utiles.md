@@ -324,6 +324,9 @@ display img.png
 ## Backup avec RSYNC sur le réseau
 ```Bash
 rsync -v -u -a --rsh=ssh --stats user@'serveur IP':/chemin/dossier/distant/ /chemin/dossier/local
+
+# Exemple :
+rsync -avrz -e 'ssh -p 22' --progress --partial --stats file.txt root@192.168.1.112:/home/daniel/Images
 ```
 ## Utilisation de la commande screen
 ```Bash
