@@ -528,3 +528,14 @@ md5sum --binary file file.recombined
 916ffee83602f9f59b00cf0971de299f *file
 916ffee83602f9f59b00cf0971de299f *file.recombined
 ```
+## Ouvrir des fichiers, dossiers ou URLs à partir de la ligne de commande avec la commande xdg-open
+
+Exemples :
+```Bash
+xdg-open 'https://fr.wikipedia.org'
+xdg-open "${HOME}"
+xdg-open fichier.pdf
+xdg-open /tmp/foobar.png
+xdg-open /tmp/foobar.mp4
+xdg-open /tmp/foobar.mp3
+```
