@@ -165,9 +165,24 @@ commande | tee -a output.txt
 commande >> toto.txt
 ```
 ## Permet de savoir si on est dans une machine virtuelle ou une machine physique
+Plusieurs commandes possibles :
 ```bash
+# dmidecode
+sudo dmidecode -s system-manufacturer
+
+# lshw
+sudo lshw -class system | grep fabriquant
+
+# hostnamectl
+hostnamectl chassis
+
+# systemd-detect-virt
+sudo systemd-detect-virt
+
+# virt-what
 sudo virt-what
-ou
+
+# facter
 facter virtual
 ```
 ## Récupération de certaines informations du système avec cat
