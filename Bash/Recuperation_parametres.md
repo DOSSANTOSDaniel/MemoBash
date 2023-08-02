@@ -26,7 +26,7 @@ esac
 
 La commande "getopts" permet de faciliter l'analyse des arguments passé en entrée d'un script.
 
-"getopts" est une commande filtre qui peut s'imbriquer dans une boucle while, est découpe ainsi les les arguments fournis en entrée d'un script.
+"getopts" est une commande filtre qui peut s'imbriquer dans une boucle while, et découpe ainsi les arguments fournis en entrée d'un script.
 
 Le premier argument de la commande,(OPTSTRING) permet de décrire les options acceptées par le script et si ces options sont associer à une valeur d'argument à étudier ou pas.
 
@@ -43,7 +43,9 @@ getopts OPTSTRING VARNAME [ARGS...]
 
 |  | Description |
 |:---|:---|
-| OPTSTRING | c'est la liste d'options disponible pour le script |
+| OPTARG | c'est la variable qui contient les arguments passés |
+| OPTSTRING | c'est la variable qui contient la liste d'options disponible pour le script |
+| OPTIND | cette variable est initialisée par défaut à 1, puis incrémentée à chaque fois qu'une option est passée. |
 | VARNAME | c'est une variable contenant l'option passée au script |
 
 Exemple :
@@ -116,6 +118,7 @@ while getopts ":s:d:hv" argument
                ^
                |_______________ Indique le mode silencieux, n'affiche pas les erreurs.
 ```
+Par défaut getops affiche un message d'erreur si l'option passée n'est pas connue, on peut désactiver ce comportement en utilisant le ':' avant l'option, exemple ':s'.
 
 Exemple si "./script.sh -s /home/toto/Images/photo.jpg" : 
 
