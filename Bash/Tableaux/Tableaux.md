@@ -136,3 +136,11 @@ Afficher les valeurs :
 
 orange chien rose
 ```
+Boucle for à partir d'un tableau avec une syntaxe c
+```Bash	
+valeurs=("valeur1" "valeur2" "valeur3" "valeur4")
+for ((i=0; i<${#valeurs[@]}; i++))
+do
+    [commande "{valeurs[i]}"]
+done
+```
