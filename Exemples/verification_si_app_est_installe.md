@@ -1,7 +1,7 @@
 # Fonctionnement du code :
 1. Détection du système d'exploitation.
 2. Détection du gestionnaire de paquets a utiliser.
-3. Vérifier si l'application est déjà installée ou pas.
+3. Vérifier si l'application est déjà installée.
 4. Installation de l'application si l'application n'est pas installée.
 
 Compatibilité avec différents types d'installations :
@@ -9,98 +9,81 @@ Compatibilité avec différents types d'installations :
 2. Via gestionnaire de paquets (apt, yum et dnf).
 
 ```bash
-#!/bin/bash
+#!/usr/bin/env bash
 
-test_pkg() {
-  case "$OSTYPE" in
-    linux*)
-      if [[ -f /etc/os-release || -f /etc/redhat-release || -f /etc/debian_version ]]
-      then
-        if [[ $(dpkg -s "apt" 2> /dev/null) || $(dpkg -s "apt-get" 2> /dev/null) ]]
-        then
-          pkg_os='apt-get'
-        elif [[ $(rpm -qi "dnf" 2> /dev/null) ]]
-        then
-          pkg_os='dnf'
-        elif [[ $(rpm -qi "yum" 2> /dev/null) ]]
-        then
-          pkg_os='yum'
-        else
-          alert_info 'INFO' 'Gestionnaire de paquets non prit en charge'
-          exit 1
-        fi
-      fi ;;
-    *) alert_info 'INFO' "OS non prit en charge : $OSTYPE" ;;
-  esac
-}
+os_type="$(uname -s)"
+pkg_managers=('apk' 'apt-get' 'yum' 'dnf' 'zypper' 'pacman' 'pkg')
+dependencies=('htop' 'curl' 'aria2' 'screen')
 
-alert_info() {
-  local msg1="${1}"
-  local msg2="${2}"
-  # $1 : ERREUR, INFO.
-  # $2 : Informations complémentaires.
-  echo -e "\n !!! ${msg1} : ${msg2} !!! \n"
-}
+if [ "$(id -u)" != '0' ]; then
+  echo "Ce script doit être exécuté en tant que root !"
+  exit 1
+fi
 
-check_install() {
+if [ "$os_type" != 'Linux' ] && [ "$os_type" != 'FreeBSD' ]; then
+  echo "OS non pris en charge !"
+  exit 1
+fi
 
-local pkg_dist="${pkg_os}"
-local app="$(echo "${1}" | tr "[:upper:]" "[:lower:]")"
+# Détection du gestionnaire de paquets
+for pkg_man in "${pkg_managers[@]}"; do
+  if command -v "$pkg_man" &>/dev/null; then
+    case "$pkg_man" in
+        apk)
+            update_cmd="apk update"
+            install_cmd="apk add -yq"
+            update_status=0
+            ;;
+        apt-get)
+            update_cmd="apt-get update -q"
+            install_cmd="apt-get install -yq"
+            update_status=0
+            dependencies[2]="aria2c"
+            ;;
+        yum)
+            update_cmd="yum check-update -q"
+            install_cmd="yum install -yq"
+            update_status=0
+            ;;
+        dnf)
+            update_cmd="dnf check-update"
+            install_cmd="dnf install -yq"
+            update_status=0
+            ;;
+        pacman)
+            update_cmd="pacman -Sy --noconfirm"
+            install_cmd="pacman -S --noconfirm"
+            update_status=0
+            ;;
+        zypper)
+            update_cmd="zypper refresh"
+            install_cmd="zypper install -yq"
+            update_status=0
+            ;;
+        pkg)
+            update_cmd="pkg update"
+            install_cmd="pkg install"
+            update_status=0
+            ;;
+    esac
+    break
+  fi
+done
+# Gestionnaire de paquets non trouvé
+if [ -z "$install_cmd" ]; then
+  echo "Gestionnaire de paquets non compatible !"
+  exit 1
+fi
 
-case "$pkg_dist" in
-  'apt' | 'apt-get' )
-
-    if ! [[ $(dpkg -s ${app} 2> /dev/null) && $(command -v ${app} 2> /dev/null) ]]
-    then
-      echo -e "\n Installation de ${app} en cours \n"
-      apt-get update -q
-      apt-get install -qy ${app}
-
-      if [[ "${?}" == "0" ]]
-      then
-        alert_info 'INFO' "Installation de ${app} réussie"
-      else
-        alert_info 'ERREUR' "Installation de ${app} Impossible!"
-        exit 1
-      fi
-    fi ;;
-  'dnf' )
-    if ! [[ $(rpm -qi "${app}" 2> /dev/null) && $(command -v ${app} 2> /dev/null) ]]
-    then
-      echo -e "\n Installation de ${app} en cours \n"
-      dnf check-update > /dev/null
-      dnf install -qy ${app}
-
-      if [[ "${?}" == "0" ]]
-      then
-        alert_info 'INFO' "Installation de ${app} réussie"
-      else
-        alert_info 'ERREUR' "Installation de ${app} Impossible!"
-        exit 1
-      fi
-    fi ;;
-  'yum' )
-    if ! [[ $(rpm -qi "${app}" 2> /dev/null) && $(command -v ${app} 2> /dev/null) ]]
-    then
-      echo -e "\n Installation de ${app} en cours \n"
-      yum check-update > /dev/null
-      yum install -qy ${app}
-
-      if [[ "${?}" == "0" ]]
-      then
-        alert_info 'INFO' "Installation de ${app} réussie"
-      else
-        alert_info 'ERREUR' "Installation de ${app} Impossible!"
-        exit 1
-      fi
-    fi ;;
-esac
-}
-
-test_pkg
-
-check_install 'firefox'
-
+# Installation de chaque dépendance si nécessaire
+for package in "${dependencies[@]}"; do
+  if ! command -v "$package" &>/dev/null; then
+    if [ "$update_status" = 0 ]; then
+      $update_cmd && ((update_status++))
+    fi
+    $install_cmd "$package" || echo "Erreur d'installation de $package !"
+  fi
+done
 ```
 ## Vérification application Flatpak, snap et install
 
