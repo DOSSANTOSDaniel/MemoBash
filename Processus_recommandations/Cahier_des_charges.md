@@ -36,22 +36,6 @@
 | Choix du shell | ... |
 | Exécution du script avec le compte | ... |
 
-### Organisation du projet
-
-Diviser le projet en différents dossiers, chaque dossier sauf main va contenir des bouts de code divisés par fonctions.
-
-| Dossiers | Sous dossiers ou fichiers |
-|:--|:--|
-| Main | ... |
-| Ui | ... |
-| GetOpt | ... |
-| Fonction | ... |
-| Usage | ... |
-| Message | ... |
-| Log | ... |
-| GetApp | ... |
-| Security | ... |
-
 ### Description du fonctionnement du script pas à pas
 ...
 ### Solutions proposées pour répondre aux besoins et indications techniques
