@@ -1,0 +1,28 @@
+# Check liste
+
+- [ ] Utiliser(#!/usr/bin/env bash)
+- [ ] Entête du script
+- [ ] Utilisation de (set -e) et (-u)
+- [ ] Nom de variables et fonctions explicite
+- [ ] Écrire les noms de variables et fonctions en snack_case
+- [ ] Variables en lecture seule si possible
+- [ ] Variables locales dans les fonctions
+- [ ] tester les variables avant de les utilisées
+- [ ] Placer les expressions régulières dans des variables avant de les utiliser
+- [ ] Avoir une fonction Usage
+- [ ] Indentation deux espaces
+- [ ] Commentaires
+- [ ] Description des erreurs, utilisation de trape
+- [ ] Toujours vérifier la valeur de statut à chaque opération
+- [ ] Préférer les flag au arg exemple:(-i) ---> (--install)
+- [ ] Veiller à ce que le fonctionnement du script soit toujours idempotent
+- [ ] Utiliser les arguments en d'entrée d'un script au lieu d'avoir un script interactif
+- [ ] Bien choisir l'extension du fichier(.bash ou .sh)
+- [ ] Travailler sur une copie des fichiers de configuration
+- [ ] Utiliser des noms de chemins absolus
+- [ ] Chiffrer les données sensibles dans votre script
+- [ ] Journalisation (logger) ou (fichier de logs)
+- [ ] Vérification du code avec shellcheck
+- [ ] Déboguer le script avec (set -x) ou (bash -x script.sh)
+- [ ] Tester le fonctionnement du script dans tous les cas de figure(éviter les résultats inattendues)
+- [ ] Corriger les fautes d'orthographe dans les commentaires
