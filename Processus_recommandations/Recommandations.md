@@ -63,8 +63,17 @@ dpkg --install nom
 Il est important de toujours documenter son code pour que nous puissions l'améliorer ou le réparer même dans 2 ans et aussi pour que d'autres personnes puissent le poursuivre plus facilement ou si jamais nous avons besoin d'un bout de code pour un autre script alors on comprendras mieux le code si c'est bien commenté.
 
 ## Quelle extention pour mon script
-Au lieu de mettre une extension en .sh pour des scripts qui tournent avec bash il vaudrait mieux utiliser .bash pour ne pas confondre entre un script ecrit en sh et un autre ecrit en bash. 
+Au lieu de mettre une extension en .sh pour des scripts qui tournent avec bash il vaudrait mieux utiliser .bash pour ne pas confondre entre un script ecrit en sh et un autre ecrit en bash.
 
+## Bonnes pratiques par rapport à la sécurité
+
+Comment accroître la sécurité des scripts shell :
+
+1. Il est conseillé de demander le mot de passe d’un utilisateur, l’inconvénient c'est que le script n'est plus autonome car il va nécessiter une intervention humaine.
+2. Pour les scriptes complètement autonomes, il faut veiller qu'il soit le maximum possible confiné dans le système afin d’être seulement exécutable par des utilisateurs spécifiques.
+3. Changer les mots de passes suite à l'utilisation d'un script.
+4. Chiffrer si possible les mots de passes de votre script.
+ 
 10. Il n'est pas recommandé de travailler avec des fichiers temporaires car cela consomme trop de ressources du fait des accès disque il vaut mieux privilégier l'utilisation des flux des commandes shell.
 11. Toujours travailler sur une copie jamais sur l'original (fichiers de configuration). 
 12. Il n'est pas conseillé d'utiliser la commande apt dans un script, car il se peut que le retour de la commande évolue dans le temps, alors qu'avec la commande apt-get on grade le même retour sur plusieurs systèmes, on a ainsi une compatibilité plus forte entre les systèmes, préférez donc la commande apt-get et apt-cache.
